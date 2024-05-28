@@ -1,68 +1,16 @@
 [
   {
-    "type": "attribute_comment",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "block_list",
+    "type": "addition",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "section",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "boolean",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "break",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "command",
-    "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": false,
       "required": false,
       "types": [
         {
-          "type": "command_attribute_list",
+          "type": "addition",
           "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "command_attribute_list",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
+        },
         {
           "type": "attribute_comment",
           "named": true
@@ -117,6 +65,161 @@
         },
         {
           "type": "restart",
+          "named": true
+        },
+        {
+          "type": "speaker",
+          "named": true
+        },
+        {
+          "type": "symbol_ref",
+          "named": true
+        },
+        {
+          "type": "unless",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "attribute_comment",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "block_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "pre_section",
+          "named": true
+        },
+        {
+          "type": "section",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "boolean",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "break",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "command",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "command_attribute_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "command_attribute_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "addition",
+          "named": true
+        },
+        {
+          "type": "attribute_comment",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "break",
+          "named": true
+        },
+        {
+          "type": "command",
+          "named": true
+        },
+        {
+          "type": "dialog",
+          "named": true
+        },
+        {
+          "type": "else",
+          "named": true
+        },
+        {
+          "type": "end",
+          "named": true
+        },
+        {
+          "type": "expression_list",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "inline_comment",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "restart",
+          "named": true
+        },
+        {
+          "type": "speaker",
           "named": true
         },
         {
@@ -189,6 +292,10 @@
             "named": false
           },
           {
+            "type": "addition",
+            "named": true
+          },
+          {
             "type": "attribute_comment",
             "named": true
           },
@@ -245,6 +352,10 @@
             "named": true
           },
           {
+            "type": "speaker",
+            "named": true
+          },
+          {
             "type": "symbol_ref",
             "named": true
           },
@@ -275,8 +386,12 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
+        {
+          "type": "addition",
+          "named": true
+        },
         {
           "type": "attribute_comment",
           "named": true
@@ -331,6 +446,10 @@
         },
         {
           "type": "restart",
+          "named": true
+        },
+        {
+          "type": "speaker",
           "named": true
         },
         {
@@ -420,6 +539,10 @@
             "named": false
           },
           {
+            "type": "addition",
+            "named": true
+          },
+          {
             "type": "attribute_comment",
             "named": true
           },
@@ -473,6 +596,10 @@
           },
           {
             "type": "restart",
+            "named": true
+          },
+          {
+            "type": "speaker",
             "named": true
           },
           {
@@ -506,6 +633,10 @@
             "named": false
           },
           {
+            "type": "addition",
+            "named": true
+          },
+          {
             "type": "attribute_comment",
             "named": true
           },
@@ -559,6 +690,10 @@
           },
           {
             "type": "restart",
+            "named": true
+          },
+          {
+            "type": "speaker",
             "named": true
           },
           {
@@ -608,6 +743,10 @@
             "named": false
           },
           {
+            "type": "addition",
+            "named": true
+          },
+          {
             "type": "attribute_comment",
             "named": true
           },
@@ -664,6 +803,10 @@
             "named": true
           },
           {
+            "type": "speaker",
+            "named": true
+          },
+          {
             "type": "symbol_ref",
             "named": true
           },
@@ -700,6 +843,21 @@
     }
   },
   {
+    "type": "pre_section",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expression_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "restart",
     "named": true,
     "fields": {}
@@ -723,11 +881,46 @@
         "required": true,
         "types": [
           {
-            "type": "identifier",
+            "type": "section_name",
             "named": true
           }
         ]
       }
+    }
+  },
+  {
+    "type": "section_name",
+    "named": true,
+    "fields": {
+      "expr": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "section_name_expr",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "section_name_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -754,6 +947,22 @@
           },
           {
             "type": "header",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "speaker",
+    "named": true,
+    "fields": {
+      "speaker": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
             "named": true
           }
         ]
@@ -846,6 +1055,10 @@
             "named": false
           },
           {
+            "type": "addition",
+            "named": true
+          },
+          {
             "type": "attribute_comment",
             "named": true
           },
@@ -899,6 +1112,10 @@
           },
           {
             "type": "restart",
+            "named": true
+          },
+          {
+            "type": "speaker",
             "named": true
           },
           {
@@ -943,6 +1160,10 @@
             "named": false
           },
           {
+            "type": "addition",
+            "named": true
+          },
+          {
             "type": "attribute_comment",
             "named": true
           },
@@ -996,6 +1217,10 @@
           },
           {
             "type": "restart",
+            "named": true
+          },
+          {
+            "type": "speaker",
             "named": true
           },
           {
@@ -1029,6 +1254,10 @@
             "named": false
           },
           {
+            "type": "addition",
+            "named": true
+          },
+          {
             "type": "attribute_comment",
             "named": true
           },
@@ -1082,6 +1311,10 @@
           },
           {
             "type": "restart",
+            "named": true
+          },
+          {
+            "type": "speaker",
             "named": true
           },
           {
@@ -1121,6 +1354,10 @@
             "named": false
           },
           {
+            "type": "addition",
+            "named": true
+          },
+          {
             "type": "attribute_comment",
             "named": true
           },
@@ -1174,6 +1411,10 @@
           },
           {
             "type": "restart",
+            "named": true
+          },
+          {
+            "type": "speaker",
             "named": true
           },
           {
@@ -1207,6 +1448,10 @@
             "named": false
           },
           {
+            "type": "addition",
+            "named": true
+          },
+          {
             "type": "attribute_comment",
             "named": true
           },
@@ -1260,6 +1505,10 @@
           },
           {
             "type": "restart",
+            "named": true
+          },
+          {
+            "type": "speaker",
             "named": true
           },
           {
@@ -1299,6 +1548,10 @@
             "named": false
           },
           {
+            "type": "addition",
+            "named": true
+          },
+          {
             "type": "attribute_comment",
             "named": true
           },
@@ -1352,6 +1605,10 @@
           },
           {
             "type": "restart",
+            "named": true
+          },
+          {
+            "type": "speaker",
             "named": true
           },
           {
@@ -1385,6 +1642,10 @@
             "named": false
           },
           {
+            "type": "addition",
+            "named": true
+          },
+          {
             "type": "attribute_comment",
             "named": true
           },
@@ -1438,6 +1699,10 @@
           },
           {
             "type": "restart",
+            "named": true
+          },
+          {
+            "type": "speaker",
             "named": true
           },
           {
@@ -1485,11 +1750,19 @@
     "named": false
   },
   {
+    "type": "+",
+    "named": false
+  },
+  {
     "type": "-",
     "named": false
   },
   {
     "type": "---",
+    "named": false
+  },
+  {
+    "type": ".",
     "named": false
   },
   {

@@ -13,31 +13,45 @@ module.exports = grammar({
 
     _newline: ($) => /\n/,
 
-    block_list: ($) => repeat1($.section),
+    block_list: ($) => repeat1($._block),
+    _block: ($) => choice($.section, $.pre_section),
+    pre_section: ($) => $.expression_list,
 
     header: ($) => repeat1($.header_entry),
     header_entry: ($) =>
-      seq($.header_param, field("content", /[^@]+/), $._newline),
+      seq($.header_param, field("content", /[^\n]+/), $._newline),
     header_param: ($) => seq("@", field("name", $.identifier)),
 
     section: ($) =>
-      seq($._section_name, field("entries", optional($.expression_list))),
-    _section_name: ($) => seq("[", field("name", $.identifier), "]"),
+      prec.right(
+        0,
+        seq(
+          field("name", $.section_name),
+          field("entries", optional($.expression_list)),
+        ),
+      ),
+    section_name: ($) => seq("[", field("expr", $.section_name_expr), "]"),
+    section_name_expr: ($) =>
+      choice(seq($.identifier, repeat(seq(".", $._field_access)))),
 
-    expression_list: ($) => seq($._expression, repeat(seq($._expression))),
+    expression_list: ($) =>
+      prec.right(0, seq($._expression, repeat(seq($._expression)))),
     _expression: ($) =>
       choice(
         $._comment,
+        $.speaker,
         $.dialog,
         $._grouping,
         $._literal,
         $._control_flow,
         $.symbol_ref,
+        $._symbolic_expr,
         $.command,
       ),
     _grouping: ($) => seq("(", $.expression_list, ")"),
     symbol_ref: ($) => seq("$", field("symbol", seq($.identifier))),
 
+    speaker: ($) => seq("(", field("speaker", $.identifier), ")"),
     dialog: ($) =>
       seq(
         field("prefix", choice("-", "*", ">")),
@@ -141,6 +155,11 @@ module.exports = grammar({
     attribute_comment: ($) => prec.right(2, seq("##", /[^\n]*/, $._newline)),
 
     identifier: (_) => /[a-zA-Z_][a-zA-Z0-9_]*/,
+    _field_access: ($) => choice($.identifier, $.integer),
+
+    _symbolic_expr: ($) => choice($._bin_expr),
+    _bin_expr: ($) => choice($.addition),
+    addition: ($) => prec.right(3, seq($._expression, "+", $._expression)),
 
     _literal: ($) => choice($.boolean, $._number),
     boolean: (_) => choice("true", "false", "yes", "no", "maybe"),
