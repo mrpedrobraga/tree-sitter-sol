@@ -30,7 +30,7 @@ module.exports = grammar({
         $._control_flow,
       ),
     grouping: ($) => seq("(", $.expression, ")"),
-    symbol_ref: ($) => choice("$", field("symbol", seq($.identifier))),
+    symbol_ref: ($) => seq("$", field("symbol", seq($.identifier))),
 
     dialog: ($) =>
       seq(
@@ -75,7 +75,16 @@ module.exports = grammar({
         field("consequence", $.expression),
       ),
 
-    command: ($) => seq(field("name", $.identifier)),
+    command: ($) =>
+      prec.right(
+        0,
+        seq(field("name", $.identifier), optional($.command_attribute_list)),
+      ),
+    command_attribute_list: ($) =>
+      prec.right(0, seq($.expression, repeat(seq(" ", $.expression)))),
+
+    inline_comment: ($) => seq("#", /[^\n]*/, "\n"),
+    attribute_comment: ($) => prec.right(2, seq("##", /[^\n]*/, "\n")),
 
     identifier: (_) => /[a-zA-Z_][a-zA-Z0-9_]*/,
 

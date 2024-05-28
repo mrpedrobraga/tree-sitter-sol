@@ -1,4 +1,2 @@
 [main]
-if ALL_OK then (
-  - Hello, World!
-)
+wait $SOME_AMOUNT
