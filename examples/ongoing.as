@@ -1,2 +1,2 @@
 [main]
-foo
+- Hello, [important]Hero of Spirit[/]!
