@@ -1,10 +1,10 @@
 [
   {
-    "type": "block",
+    "type": "block_list",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
@@ -54,7 +54,67 @@
       "required": true,
       "types": [
         {
-          "type": "expression",
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "break",
+          "named": true
+        },
+        {
+          "type": "command",
+          "named": true
+        },
+        {
+          "type": "dialog",
+          "named": true
+        },
+        {
+          "type": "else",
+          "named": true
+        },
+        {
+          "type": "end",
+          "named": true
+        },
+        {
+          "type": "expression_list",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "restart",
+          "named": true
+        },
+        {
+          "type": "symbol_ref",
+          "named": true
+        },
+        {
+          "type": "unless",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -95,15 +155,108 @@
     }
   },
   {
-    "type": "expression",
+    "type": "else",
+    "named": true,
+    "fields": {
+      "consequence": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "command",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "else",
+            "named": true
+          },
+          {
+            "type": "end",
+            "named": true
+          },
+          {
+            "type": "expression_list",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "restart",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "end",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "expression_list",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "break",
           "named": true
         },
         {
@@ -115,11 +268,19 @@
           "named": true
         },
         {
-          "type": "float",
+          "type": "else",
           "named": true
         },
         {
-          "type": "grouping",
+          "type": "end",
+          "named": true
+        },
+        {
+          "type": "expression_list",
+          "named": true
+        },
+        {
+          "type": "float",
           "named": true
         },
         {
@@ -131,7 +292,27 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "restart",
+          "named": true
+        },
+        {
           "type": "symbol_ref",
+          "named": true
+        },
+        {
+          "type": "unless",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -141,21 +322,6 @@
     "type": "float",
     "named": true,
     "fields": {}
-  },
-  {
-    "type": "grouping",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "expression",
-          "named": true
-        }
-      ]
-    }
   },
   {
     "type": "header",
@@ -208,21 +374,157 @@
     "named": true,
     "fields": {
       "condition": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
-            "type": "expression",
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "command",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "else",
+            "named": true
+          },
+          {
+            "type": "end",
+            "named": true
+          },
+          {
+            "type": "expression_list",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "restart",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
             "named": true
           }
         ]
       },
       "consequence": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
-            "type": "expression",
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "command",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "else",
+            "named": true
+          },
+          {
+            "type": "end",
+            "named": true
+          },
+          {
+            "type": "expression_list",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "restart",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
             "named": true
           }
         ]
@@ -233,6 +535,90 @@
     "type": "integer",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "loop",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "command",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "else",
+            "named": true
+          },
+          {
+            "type": "end",
+            "named": true
+          },
+          {
+            "type": "expression_list",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "restart",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "markup_open_tag",
@@ -253,26 +639,17 @@
   {
     "type": "section",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "expression",
-          "named": true
-        },
-        {
-          "type": "section_name",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "section_name",
-    "named": true,
     "fields": {
+      "entries": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "expression_list",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -290,11 +667,11 @@
     "named": true,
     "fields": {
       "blocks": {
-        "multiple": true,
-        "required": false,
+        "multiple": false,
+        "required": true,
         "types": [
           {
-            "type": "block",
+            "type": "block_list",
             "named": true
           }
         ]
@@ -389,11 +766,79 @@
     "named": true,
     "fields": {
       "expression": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
-            "type": "expression",
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "command",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "else",
+            "named": true
+          },
+          {
+            "type": "end",
+            "named": true
+          },
+          {
+            "type": "expression_list",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "restart",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
             "named": true
           }
         ]
@@ -406,12 +851,490 @@
     "fields": {}
   },
   {
-    "type": "\n",
-    "named": false
+    "type": "unless",
+    "named": true,
+    "fields": {
+      "condition": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "command",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "else",
+            "named": true
+          },
+          {
+            "type": "end",
+            "named": true
+          },
+          {
+            "type": "expression_list",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "restart",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "consequence": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "command",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "else",
+            "named": true
+          },
+          {
+            "type": "end",
+            "named": true
+          },
+          {
+            "type": "expression_list",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "restart",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
-    "type": " ",
-    "named": false
+    "type": "until",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "command",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "else",
+            "named": true
+          },
+          {
+            "type": "end",
+            "named": true
+          },
+          {
+            "type": "expression_list",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "restart",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "command",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "else",
+            "named": true
+          },
+          {
+            "type": "end",
+            "named": true
+          },
+          {
+            "type": "expression_list",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "restart",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "while",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "command",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "else",
+            "named": true
+          },
+          {
+            "type": "end",
+            "named": true
+          },
+          {
+            "type": "expression_list",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "restart",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "command",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "else",
+            "named": true
+          },
+          {
+            "type": "end",
+            "named": true
+          },
+          {
+            "type": "expression_list",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "restart",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "#",
@@ -462,6 +1385,22 @@
     "named": false
   },
   {
+    "type": "break",
+    "named": true
+  },
+  {
+    "type": "do",
+    "named": false
+  },
+  {
+    "type": "else",
+    "named": false
+  },
+  {
+    "type": "end",
+    "named": false
+  },
+  {
     "type": "false",
     "named": false
   },
@@ -471,6 +1410,10 @@
   },
   {
     "type": "if",
+    "named": false
+  },
+  {
+    "type": "loop",
     "named": false
   },
   {
@@ -486,6 +1429,14 @@
     "named": false
   },
   {
+    "type": "restart",
+    "named": true
+  },
+  {
+    "type": "section",
+    "named": false
+  },
+  {
     "type": "then",
     "named": false
   },
@@ -495,6 +1446,14 @@
   },
   {
     "type": "unless",
+    "named": false
+  },
+  {
+    "type": "until",
+    "named": false
+  },
+  {
+    "type": "while",
     "named": false
   },
   {

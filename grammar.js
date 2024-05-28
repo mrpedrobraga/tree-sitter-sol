@@ -1,42 +1,47 @@
 module.exports = grammar({
   name: "aster",
 
+  word: ($) => $.identifier,
   extras: ($) => [/\s+/],
 
   rules: {
     source_file: ($) =>
       seq(
         optional(field("header", seq(optional($.header), "---"))),
-        field("blocks", repeat($.block)),
+        field("blocks", $.block_list),
       ),
 
-    block: ($) => choice($.section),
+    _newline: ($) => /\n/,
+
+    block_list: ($) => repeat1($.section),
 
     header: ($) => repeat1($.header_entry),
-    header_entry: ($) => seq($.header_param, field("content", /[^@]+/), "\n"),
+    header_entry: ($) =>
+      seq($.header_param, field("content", /[^@]+/), $._newline),
     header_param: ($) => seq("@", field("name", $.identifier)),
 
-    section: ($) => seq($.section_name, repeat($._section_entry)),
-    section_name: ($) => seq("[", field("name", $.identifier), "]"),
-    _section_entry: ($) => choice($.expression),
+    section: ($) =>
+      seq($._section_name, field("entries", optional($.expression_list))),
+    _section_name: ($) => seq("[", field("name", $.identifier), "]"),
 
-    expression: ($) =>
+    expression_list: ($) => seq($._expression, repeat(seq($._expression))),
+    _expression: ($) =>
       choice(
         $.dialog,
-        $.command,
-        $.symbol_ref,
-        $.grouping,
+        $._grouping,
         $._literal,
         $._control_flow,
+        $.symbol_ref,
+        $.command,
       ),
-    grouping: ($) => seq("(", $.expression, ")"),
+    _grouping: ($) => seq("(", $.expression_list, ")"),
     symbol_ref: ($) => seq("$", field("symbol", seq($.identifier))),
 
     dialog: ($) =>
       seq(
         field("prefix", choice("-", "*", ">")),
         field("content", $.text_content),
-        "\n",
+        $._newline,
       ),
 
     text_content: ($) =>
@@ -54,37 +59,84 @@ module.exports = grammar({
         field("content", $.text_content),
         $.markup_close_tag,
       ),
-    text_expr_fragment: ($) => seq("{", field("expression", $.expression), "}"),
+    text_expr_fragment: ($) =>
+      seq("{", field("expression", $._expression), "}"),
 
     markup_open_tag: ($) => seq("[", field("tag_name", $.identifier), "]"),
     markup_close_tag: ($) => "[/]",
 
-    _control_flow: ($) => choice($.if),
+    _control_flow: ($) =>
+      choice(
+        $.if,
+        $.unless,
+        $.else,
+        $.loop,
+        $.while,
+        $.until,
+        $.break,
+        $.restart,
+        $.end,
+      ),
     if: ($) =>
-      seq(
-        "if",
-        field("condition", $.expression),
-        "then",
-        field("consequence", $.expression),
+      prec.right(
+        0,
+        seq(
+          "if",
+          field("condition", $._expression),
+          "then",
+          field("consequence", $._expression),
+        ),
       ),
     unless: ($) =>
-      seq(
-        "unless",
-        field("condition", $.expression),
-        "then",
-        field("consequence", $.expression),
+      prec.right(
+        0,
+        seq(
+          "unless",
+          field("condition", $._expression),
+          "then",
+          field("consequence", $._expression),
+        ),
       ),
+    else: ($) => seq("else", field("consequence", $._expression)),
+    loop: ($) => seq("loop", field("body", $._expression)),
+    while: ($) =>
+      prec.right(
+        0,
+        seq(
+          "while",
+          field("condition", $._expression),
+          "do",
+          field("body", $._expression),
+        ),
+      ),
+    until: ($) =>
+      prec.right(
+        0,
+        seq(
+          "until",
+          field("condition", $._expression),
+          "do",
+          field("body", $._expression),
+        ),
+      ),
+    break: ($) => "break",
+    restart: ($) => "restart",
+    end: ($) => seq("end", choice("section")),
 
     command: ($) =>
       prec.right(
         0,
-        seq(field("name", $.identifier), optional($.command_attribute_list)),
+        seq(
+          field("name", $.identifier),
+          optional($.command_attribute_list),
+          $._newline,
+        ),
       ),
     command_attribute_list: ($) =>
-      prec.right(0, seq($.expression, repeat(seq(" ", $.expression)))),
+      prec.right(0, seq($._expression, repeat(seq(/,/, $._expression)))),
 
-    inline_comment: ($) => seq("#", /[^\n]*/, "\n"),
-    attribute_comment: ($) => prec.right(2, seq("##", /[^\n]*/, "\n")),
+    inline_comment: ($) => seq("#", /[^\n]*/, $._newline),
+    attribute_comment: ($) => prec.right(2, seq("##", /[^\n]*/, $._newline)),
 
     identifier: (_) => /[a-zA-Z_][a-zA-Z0-9_]*/,
 

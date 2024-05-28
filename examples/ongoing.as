@@ -1,2 +1,4 @@
 [main]
-wait $SOME_AMOUNT
+loop (
+    - Hello, forever!
+)
