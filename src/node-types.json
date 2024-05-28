@@ -1,5 +1,10 @@
 [
   {
+    "type": "attribute_comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "block_list",
     "named": true,
     "fields": {},
@@ -59,6 +64,10 @@
       "required": true,
       "types": [
         {
+          "type": "attribute_comment",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -92,6 +101,10 @@
         },
         {
           "type": "if",
+          "named": true
+        },
+        {
+          "type": "inline_comment",
           "named": true
         },
         {
@@ -176,6 +189,10 @@
             "named": false
           },
           {
+            "type": "attribute_comment",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
@@ -209,6 +226,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
             "named": true
           },
           {
@@ -257,6 +278,10 @@
       "required": true,
       "types": [
         {
+          "type": "attribute_comment",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -290,6 +315,10 @@
         },
         {
           "type": "if",
+          "named": true
+        },
+        {
+          "type": "inline_comment",
           "named": true
         },
         {
@@ -391,6 +420,10 @@
             "named": false
           },
           {
+            "type": "attribute_comment",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
@@ -424,6 +457,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
             "named": true
           },
           {
@@ -469,6 +506,10 @@
             "named": false
           },
           {
+            "type": "attribute_comment",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
@@ -502,6 +543,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
             "named": true
           },
           {
@@ -537,6 +582,11 @@
     }
   },
   {
+    "type": "inline_comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "integer",
     "named": true,
     "fields": {}
@@ -556,6 +606,10 @@
           {
             "type": ")",
             "named": false
+          },
+          {
+            "type": "attribute_comment",
+            "named": true
           },
           {
             "type": "boolean",
@@ -591,6 +645,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
             "named": true
           },
           {
@@ -788,6 +846,10 @@
             "named": false
           },
           {
+            "type": "attribute_comment",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
@@ -821,6 +883,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
             "named": true
           },
           {
@@ -877,6 +943,10 @@
             "named": false
           },
           {
+            "type": "attribute_comment",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
@@ -910,6 +980,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
             "named": true
           },
           {
@@ -955,6 +1029,10 @@
             "named": false
           },
           {
+            "type": "attribute_comment",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
@@ -988,6 +1066,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
             "named": true
           },
           {
@@ -1039,6 +1121,10 @@
             "named": false
           },
           {
+            "type": "attribute_comment",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
@@ -1072,6 +1158,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
             "named": true
           },
           {
@@ -1117,6 +1207,10 @@
             "named": false
           },
           {
+            "type": "attribute_comment",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
@@ -1150,6 +1244,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
             "named": true
           },
           {
@@ -1201,6 +1299,10 @@
             "named": false
           },
           {
+            "type": "attribute_comment",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
@@ -1234,6 +1336,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
             "named": true
           },
           {
@@ -1279,6 +1385,10 @@
             "named": false
           },
           {
+            "type": "attribute_comment",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
@@ -1312,6 +1422,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
             "named": true
           },
           {

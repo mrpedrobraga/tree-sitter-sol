@@ -176,6 +176,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "_comment"
+        },
+        {
+          "type": "SYMBOL",
           "name": "dialog"
         },
         {
@@ -685,6 +689,19 @@
           }
         ]
       }
+    },
+    "_comment": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "inline_comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "attribute_comment"
+        }
+      ]
     },
     "inline_comment": {
       "type": "SEQ",

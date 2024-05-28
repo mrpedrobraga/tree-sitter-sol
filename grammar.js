@@ -27,6 +27,7 @@ module.exports = grammar({
     expression_list: ($) => seq($._expression, repeat(seq($._expression))),
     _expression: ($) =>
       choice(
+        $._comment,
         $.dialog,
         $._grouping,
         $._literal,
@@ -135,6 +136,7 @@ module.exports = grammar({
     command_attribute_list: ($) =>
       prec.right(0, seq($._expression, repeat(seq(/,/, $._expression)))),
 
+    _comment: ($) => choice($.inline_comment, $.attribute_comment),
     inline_comment: ($) => seq("#", /[^\n]*/, $._newline),
     attribute_comment: ($) => prec.right(2, seq("##", /[^\n]*/, $._newline)),
 
