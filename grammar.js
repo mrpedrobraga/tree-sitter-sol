@@ -109,6 +109,7 @@ module.exports = grammar({
 
     _control_flow: ($) =>
       choice(
+        $.with,
         $.if,
         $.unless,
         $.else,
@@ -123,6 +124,16 @@ module.exports = grammar({
         $.await,
         $.yield,
         $.todo,
+      ),
+    with: ($) =>
+      prec.right(
+        0,
+        seq(
+          "with",
+          field("context", $._expression),
+          "do",
+          field("consequence", $._expression),
+        ),
       ),
     if: ($) =>
       prec.right(

@@ -1,136 +1,5 @@
 [
   {
-    "type": "addition",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "addition",
-          "named": true
-        },
-        {
-          "type": "async",
-          "named": true
-        },
-        {
-          "type": "attribute_comment",
-          "named": true
-        },
-        {
-          "type": "await",
-          "named": true
-        },
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "break",
-          "named": true
-        },
-        {
-          "type": "command",
-          "named": true
-        },
-        {
-          "type": "dialog",
-          "named": true
-        },
-        {
-          "type": "else",
-          "named": true
-        },
-        {
-          "type": "end",
-          "named": true
-        },
-        {
-          "type": "expression_list",
-          "named": true
-        },
-        {
-          "type": "float",
-          "named": true
-        },
-        {
-          "type": "if",
-          "named": true
-        },
-        {
-          "type": "inline_comment",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "let_binding",
-          "named": true
-        },
-        {
-          "type": "loop",
-          "named": true
-        },
-        {
-          "type": "param_binding",
-          "named": true
-        },
-        {
-          "type": "restart",
-          "named": true
-        },
-        {
-          "type": "return",
-          "named": true
-        },
-        {
-          "type": "section_call",
-          "named": true
-        },
-        {
-          "type": "slot_binding",
-          "named": true
-        },
-        {
-          "type": "speaker",
-          "named": true
-        },
-        {
-          "type": "symbol_ref",
-          "named": true
-        },
-        {
-          "type": "todo",
-          "named": true
-        },
-        {
-          "type": "type",
-          "named": true
-        },
-        {
-          "type": "unless",
-          "named": true
-        },
-        {
-          "type": "until",
-          "named": true
-        },
-        {
-          "type": "while",
-          "named": true
-        },
-        {
-          "type": "yield",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "async",
     "named": true,
     "fields": {
@@ -145,10 +14,6 @@
           {
             "type": ")",
             "named": false
-          },
-          {
-            "type": "addition",
-            "named": true
           },
           {
             "type": "async",
@@ -260,6 +125,10 @@
           },
           {
             "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
             "named": true
           },
           {
@@ -292,10 +161,6 @@
             "named": false
           },
           {
-            "type": "addition",
-            "named": true
-          },
-          {
             "type": "async",
             "named": true
           },
@@ -408,6 +273,10 @@
             "named": true
           },
           {
+            "type": "with",
+            "named": true
+          },
+          {
             "type": "yield",
             "named": true
           }
@@ -418,10 +287,6 @@
       "multiple": false,
       "required": false,
       "types": [
-        {
-          "type": "addition",
-          "named": true
-        },
         {
           "type": "async",
           "named": true
@@ -532,6 +397,10 @@
         },
         {
           "type": "while",
+          "named": true
+        },
+        {
+          "type": "with",
           "named": true
         },
         {
@@ -602,12 +471,8 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
-        {
-          "type": "addition",
-          "named": true
-        },
         {
           "type": "async",
           "named": true
@@ -725,6 +590,10 @@
           "named": true
         },
         {
+          "type": "with",
+          "named": true
+        },
+        {
           "type": "yield",
           "named": true
         }
@@ -780,10 +649,6 @@
           {
             "type": ")",
             "named": false
-          },
-          {
-            "type": "addition",
-            "named": true
           },
           {
             "type": "async",
@@ -898,6 +763,10 @@
             "named": true
           },
           {
+            "type": "with",
+            "named": true
+          },
+          {
             "type": "yield",
             "named": true
           }
@@ -916,12 +785,8 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
-        {
-          "type": "addition",
-          "named": true
-        },
         {
           "type": "async",
           "named": true
@@ -1035,6 +900,10 @@
           "named": true
         },
         {
+          "type": "with",
+          "named": true
+        },
+        {
           "type": "yield",
           "named": true
         }
@@ -1109,10 +978,6 @@
             "named": false
           },
           {
-            "type": "addition",
-            "named": true
-          },
-          {
             "type": "async",
             "named": true
           },
@@ -1222,6 +1087,10 @@
           },
           {
             "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
             "named": true
           },
           {
@@ -1243,10 +1112,6 @@
             "named": false
           },
           {
-            "type": "addition",
-            "named": true
-          },
-          {
             "type": "async",
             "named": true
           },
@@ -1356,6 +1221,10 @@
           },
           {
             "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
             "named": true
           },
           {
@@ -1393,10 +1262,6 @@
             "named": false
           },
           {
-            "type": "addition",
-            "named": true
-          },
-          {
             "type": "async",
             "named": true
           },
@@ -1506,6 +1371,10 @@
           },
           {
             "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
             "named": true
           },
           {
@@ -1543,10 +1412,6 @@
             "named": false
           },
           {
-            "type": "addition",
-            "named": true
-          },
-          {
             "type": "async",
             "named": true
           },
@@ -1656,6 +1521,10 @@
           },
           {
             "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
             "named": true
           },
           {
@@ -1699,10 +1568,6 @@
             "named": false
           },
           {
-            "type": "addition",
-            "named": true
-          },
-          {
             "type": "async",
             "named": true
           },
@@ -1812,6 +1677,10 @@
           },
           {
             "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
             "named": true
           },
           {
@@ -1869,10 +1738,6 @@
             "named": false
           },
           {
-            "type": "addition",
-            "named": true
-          },
-          {
             "type": "async",
             "named": true
           },
@@ -1982,6 +1847,10 @@
           },
           {
             "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
             "named": true
           },
           {
@@ -2096,10 +1965,6 @@
             "named": false
           },
           {
-            "type": "addition",
-            "named": true
-          },
-          {
             "type": "async",
             "named": true
           },
@@ -2209,6 +2074,10 @@
           },
           {
             "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
             "named": true
           },
           {
@@ -2361,10 +2230,6 @@
             "named": false
           },
           {
-            "type": "addition",
-            "named": true
-          },
-          {
             "type": "async",
             "named": true
           },
@@ -2474,6 +2339,10 @@
           },
           {
             "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
             "named": true
           },
           {
@@ -2527,10 +2396,6 @@
             "named": false
           },
           {
-            "type": "addition",
-            "named": true
-          },
-          {
             "type": "async",
             "named": true
           },
@@ -2640,6 +2505,10 @@
           },
           {
             "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
             "named": true
           },
           {
@@ -2661,10 +2530,6 @@
             "named": false
           },
           {
-            "type": "addition",
-            "named": true
-          },
-          {
             "type": "async",
             "named": true
           },
@@ -2774,6 +2639,10 @@
           },
           {
             "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
             "named": true
           },
           {
@@ -2801,10 +2670,6 @@
             "named": false
           },
           {
-            "type": "addition",
-            "named": true
-          },
-          {
             "type": "async",
             "named": true
           },
@@ -2914,6 +2779,10 @@
           },
           {
             "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
             "named": true
           },
           {
@@ -2935,10 +2804,6 @@
             "named": false
           },
           {
-            "type": "addition",
-            "named": true
-          },
-          {
             "type": "async",
             "named": true
           },
@@ -3048,6 +2913,10 @@
           },
           {
             "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
             "named": true
           },
           {
@@ -3075,10 +2944,6 @@
             "named": false
           },
           {
-            "type": "addition",
-            "named": true
-          },
-          {
             "type": "async",
             "named": true
           },
@@ -3188,6 +3053,10 @@
           },
           {
             "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
             "named": true
           },
           {
@@ -3209,8 +3078,144 @@
             "named": false
           },
           {
-            "type": "addition",
+            "type": "async",
             "named": true
+          },
+          {
+            "type": "attribute_comment",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "command",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "else",
+            "named": true
+          },
+          {
+            "type": "end",
+            "named": true
+          },
+          {
+            "type": "expression_list",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "let_binding",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "param_binding",
+            "named": true
+          },
+          {
+            "type": "restart",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "section_call",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
+            "named": true
+          },
+          {
+            "type": "speaker",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo",
+            "named": true
+          },
+          {
+            "type": "type",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "with",
+    "named": true,
+    "fields": {
+      "consequence": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
           },
           {
             "type": "async",
@@ -3322,6 +3327,144 @@
           },
           {
             "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      },
+      "context": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "attribute_comment",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "command",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "else",
+            "named": true
+          },
+          {
+            "type": "end",
+            "named": true
+          },
+          {
+            "type": "expression_list",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "let_binding",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "param_binding",
+            "named": true
+          },
+          {
+            "type": "restart",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "section_call",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
+            "named": true
+          },
+          {
+            "type": "speaker",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo",
+            "named": true
+          },
+          {
+            "type": "type",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
             "named": true
           },
           {
@@ -3349,10 +3492,6 @@
             "named": false
           },
           {
-            "type": "addition",
-            "named": true
-          },
-          {
             "type": "async",
             "named": true
           },
@@ -3462,6 +3601,10 @@
           },
           {
             "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
             "named": true
           },
           {
@@ -3502,10 +3645,6 @@
   },
   {
     "type": "*",
-    "named": false
-  },
-  {
-    "type": "+",
     "named": false
   },
   {
@@ -3678,6 +3817,10 @@
   },
   {
     "type": "while",
+    "named": false
+  },
+  {
+    "type": "with",
     "named": false
   },
   {

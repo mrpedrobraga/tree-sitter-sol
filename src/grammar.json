@@ -279,10 +279,6 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_symbolic_expr"
-        },
-        {
-          "type": "SYMBOL",
           "name": "command"
         },
         {
@@ -637,6 +633,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "with"
+        },
+        {
+          "type": "SYMBOL",
           "name": "if"
         },
         {
@@ -692,6 +692,39 @@
           "name": "todo"
         }
       ]
+    },
+    "with": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "with"
+          },
+          {
+            "type": "FIELD",
+            "name": "context",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "do"
+          },
+          {
+            "type": "FIELD",
+            "name": "consequence",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
     },
     "if": {
       "type": "PREC_RIGHT",
@@ -1180,45 +1213,6 @@
           "name": "integer"
         }
       ]
-    },
-    "_symbolic_expr": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "_bin_expr"
-        }
-      ]
-    },
-    "_bin_expr": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "addition"
-        }
-      ]
-    },
-    "addition": {
-      "type": "PREC_RIGHT",
-      "value": 3,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_expression"
-          },
-          {
-            "type": "STRING",
-            "value": "+"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_expression"
-          }
-        ]
-      }
     },
     "section_call": {
       "type": "SEQ",

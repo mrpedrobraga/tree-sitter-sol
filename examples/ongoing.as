@@ -1,2 +1,5 @@
 [main]
-let $a = (sub (add 2 2) 3.0)
+with camera do (
+  move 100 200
+  warp 500 300
+)
