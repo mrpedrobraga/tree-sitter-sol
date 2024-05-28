@@ -1,12 +1,5 @@
-@group  Inner Voices E01 - Fragmented
-@scene  Temple of Reflection
-@author Pedro Braga
-@locale en
-
----
-
-# Claire steps inside The Mirror's temple, her steps echoing.
 [entrance]
+
 bgm play Temple_Of_Reflection
 (Claire)
 - ...
@@ -90,7 +83,7 @@ battle engage vs_erica
 [vs_erica.monologue.05]
 (Erica serious)
 - You think you can avoid danger forever?
-- Well, let's see how you deal with [chr=claire]my special attack[/chr]!
+- Well, let's see how you deal with [chr=claire]my special attack[/]!
 
 [vs_erica.act.spare.too_early]
 * ...but she's still determined to win.
