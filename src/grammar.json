@@ -159,6 +159,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "command"
+        },
+        {
+          "type": "SYMBOL",
           "name": "symbol_ref"
         },
         {

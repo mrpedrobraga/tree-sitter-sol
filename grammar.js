@@ -21,7 +21,14 @@ module.exports = grammar({
     _section_entry: ($) => choice($.expression),
 
     expression: ($) =>
-      choice($.dialog, $.symbol_ref, $.grouping, $._literal, $._control_flow),
+      choice(
+        $.dialog,
+        $.command,
+        $.symbol_ref,
+        $.grouping,
+        $._literal,
+        $._control_flow,
+      ),
     grouping: ($) => seq("(", $.expression, ")"),
     symbol_ref: ($) => choice("$", field("symbol", seq($.identifier))),
 
