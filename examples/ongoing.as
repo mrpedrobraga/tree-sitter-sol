@@ -1,2 +1,2 @@
 [main]
-let a = some_command
+let $a = some_command

@@ -68,6 +68,10 @@
           "named": true
         },
         {
+          "type": "let_binding",
+          "named": true
+        },
+        {
           "type": "loop",
           "named": true
         },
@@ -77,6 +81,10 @@
         },
         {
           "type": "return",
+          "named": true
+        },
+        {
+          "type": "slot_binding",
           "named": true
         },
         {
@@ -187,6 +195,10 @@
             "named": true
           },
           {
+            "type": "let_binding",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -196,6 +208,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
             "named": true
           },
           {
@@ -312,6 +328,10 @@
             "named": true
           },
           {
+            "type": "let_binding",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -321,6 +341,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
             "named": true
           },
           {
@@ -419,6 +443,10 @@
           "named": true
         },
         {
+          "type": "let_binding",
+          "named": true
+        },
+        {
           "type": "loop",
           "named": true
         },
@@ -428,6 +456,10 @@
         },
         {
           "type": "return",
+          "named": true
+        },
+        {
+          "type": "slot_binding",
           "named": true
         },
         {
@@ -589,6 +621,10 @@
           "named": true
         },
         {
+          "type": "let_binding",
+          "named": true
+        },
+        {
           "type": "loop",
           "named": true
         },
@@ -598,6 +634,10 @@
         },
         {
           "type": "return",
+          "named": true
+        },
+        {
+          "type": "slot_binding",
           "named": true
         },
         {
@@ -742,6 +782,10 @@
             "named": true
           },
           {
+            "type": "let_binding",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -751,6 +795,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
             "named": true
           },
           {
@@ -859,6 +907,10 @@
           "named": true
         },
         {
+          "type": "let_binding",
+          "named": true
+        },
+        {
           "type": "loop",
           "named": true
         },
@@ -868,6 +920,10 @@
         },
         {
           "type": "return",
+          "named": true
+        },
+        {
+          "type": "slot_binding",
           "named": true
         },
         {
@@ -1029,6 +1085,10 @@
             "named": true
           },
           {
+            "type": "let_binding",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -1038,6 +1098,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
             "named": true
           },
           {
@@ -1143,6 +1207,10 @@
             "named": true
           },
           {
+            "type": "let_binding",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -1152,6 +1220,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
             "named": true
           },
           {
@@ -1195,6 +1267,144 @@
     "type": "integer",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "let_binding",
+    "named": true,
+    "fields": {
+      "initializer": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "addition",
+            "named": true
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "attribute_comment",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "command",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "else",
+            "named": true
+          },
+          {
+            "type": "end",
+            "named": true
+          },
+          {
+            "type": "expression_list",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "let_binding",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "restart",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
+            "named": true
+          },
+          {
+            "type": "speaker",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "loop",
@@ -1273,6 +1483,10 @@
             "named": true
           },
           {
+            "type": "let_binding",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -1282,6 +1496,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
             "named": true
           },
           {
@@ -1429,6 +1647,10 @@
             "named": true
           },
           {
+            "type": "let_binding",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -1438,6 +1660,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
             "named": true
           },
           {
@@ -1531,6 +1757,144 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "slot_binding",
+    "named": true,
+    "fields": {
+      "initializer": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "addition",
+            "named": true
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "attribute_comment",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "command",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "else",
+            "named": true
+          },
+          {
+            "type": "end",
+            "named": true
+          },
+          {
+            "type": "expression_list",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "let_binding",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "restart",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
+            "named": true
+          },
+          {
+            "type": "speaker",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -1725,6 +2089,10 @@
             "named": true
           },
           {
+            "type": "let_binding",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -1734,6 +2102,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
             "named": true
           },
           {
@@ -1866,6 +2238,10 @@
             "named": true
           },
           {
+            "type": "let_binding",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -1875,6 +2251,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
             "named": true
           },
           {
@@ -1980,6 +2360,10 @@
             "named": true
           },
           {
+            "type": "let_binding",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -1989,6 +2373,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
             "named": true
           },
           {
@@ -2100,6 +2488,10 @@
             "named": true
           },
           {
+            "type": "let_binding",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -2109,6 +2501,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
             "named": true
           },
           {
@@ -2214,6 +2610,10 @@
             "named": true
           },
           {
+            "type": "let_binding",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -2223,6 +2623,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
             "named": true
           },
           {
@@ -2334,6 +2738,10 @@
             "named": true
           },
           {
+            "type": "let_binding",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -2343,6 +2751,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
             "named": true
           },
           {
@@ -2448,6 +2860,10 @@
             "named": true
           },
           {
+            "type": "let_binding",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -2457,6 +2873,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
             "named": true
           },
           {
@@ -2568,6 +2988,10 @@
             "named": true
           },
           {
+            "type": "let_binding",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -2577,6 +3001,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "slot_binding",
             "named": true
           },
           {

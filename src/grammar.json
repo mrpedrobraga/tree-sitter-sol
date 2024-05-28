@@ -259,6 +259,14 @@
         },
         {
           "type": "SYMBOL",
+          "name": "let_binding"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "slot_binding"
+        },
+        {
+          "type": "SYMBOL",
           "name": "_control_flow"
         },
         {

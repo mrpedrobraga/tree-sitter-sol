@@ -43,6 +43,8 @@ module.exports = grammar({
         $.dialog,
         $._grouping,
         $._literal,
+        $.let_binding,
+        $.slot_binding,
         $._control_flow,
         $.symbol_ref,
         $._symbolic_expr,
