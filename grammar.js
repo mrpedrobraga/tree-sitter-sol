@@ -137,6 +137,7 @@ module.exports = grammar({
     break: ($) => seq("break"),
     restart: ($) => seq("restart"),
     end: ($) => seq("end", choice("section")),
+    todo: ($) => seq("todo", field("what", $.text_content)),
 
     command: ($) =>
       prec.right(

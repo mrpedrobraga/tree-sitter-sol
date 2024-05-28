@@ -1,3 +1,11 @@
+---
+  @author Pedro Braga <mrhenribraga@gmail.com>
+  @episode 01
+  @scene Temple of Reflection
+---
+
+## Claire will enter the temple of reflection, which is very ominously lit.
+
 [entrance]
 
 bgm play Temple_Of_Reflection
@@ -65,8 +73,8 @@ battle engage vs_erica
 
 [vs_erica.monologue.03]
 (Erica serious)
-- You don't have to do that. You could find a home here...
-- Look at all of them back there.
+- You don't have to do that. You could find a home here in Starfall...
+- Look back to the people you've met so far.
 (Erica sincere)
 - They barely know you and they already love you.
 - And I...
