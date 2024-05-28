@@ -91,6 +91,7 @@ module.exports = grammar({
         $.break,
         $.restart,
         $.end,
+        $.todo,
       ),
     if: ($) =>
       prec.right(
@@ -137,7 +138,7 @@ module.exports = grammar({
     break: ($) => seq("break"),
     restart: ($) => seq("restart"),
     end: ($) => seq("end", choice("section")),
-    todo: ($) => seq("todo", field("what", $.text_content)),
+    todo: ($) => seq("todo", field("what", $.text_content), $._newline),
 
     command: ($) =>
       prec.right(

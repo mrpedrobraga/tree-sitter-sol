@@ -524,6 +524,10 @@
         {
           "type": "SYMBOL",
           "name": "end"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "todo"
         }
       ]
     },
@@ -743,6 +747,10 @@
             "type": "SYMBOL",
             "name": "text_content"
           }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
         }
       ]
     },
