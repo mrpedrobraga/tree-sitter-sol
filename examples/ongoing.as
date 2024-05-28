@@ -1,5 +1,5 @@
 [main]
-with camera do (
+with (camera) do (
   move 100 200
-  warp 500 300
+  warp 100 200
 )

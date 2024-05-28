@@ -1084,8 +1084,8 @@
       }
     },
     "command_attribute_list": {
-      "type": "PREC_RIGHT",
-      "value": 0,
+      "type": "PREC_LEFT",
+      "value": 1,
       "content": {
         "type": "SEQ",
         "members": [
@@ -1099,8 +1099,11 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "PATTERN",
-                  "value": " "
+                  "type": "IMMEDIATE_TOKEN",
+                  "content": {
+                    "type": "PATTERN",
+                    "value": " +"
+                  }
                 },
                 {
                   "type": "SYMBOL",

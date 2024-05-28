@@ -1,3 +1,5 @@
+const SPACE_REGEX = / +/;
+
 module.exports = grammar({
   name: "aster",
 
@@ -204,9 +206,12 @@ module.exports = grammar({
         ),
       ),
     command_attribute_list: ($) =>
-      prec.right(
-        0,
-        seq($._command_parameter, repeat(seq(/ /, $._command_parameter))),
+      prec.left(
+        1,
+        seq(
+          $._command_parameter,
+          repeat(seq(token.immediate(SPACE_REGEX), $._command_parameter)),
+        ),
       ),
     _command_parameter: ($) =>
       prec.right(
