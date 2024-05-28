@@ -80,6 +80,21 @@ module.exports = grammar({
     markup_open_tag: ($) => seq("[", field("tag_name", $.identifier), "]"),
     markup_close_tag: ($) => "[/]",
 
+    let_binding: ($) =>
+      seq(
+        "let",
+        seq("$", field("name", $.identifier)),
+        "=",
+        field("initializer", $._expression),
+      ),
+    slot_binding: ($) =>
+      seq(
+        "slot",
+        seq("$", field("name", $.identifier)),
+        "<<",
+        field("initializer", $._expression),
+      ),
+
     _control_flow: ($) =>
       choice(
         $.if,
@@ -91,6 +106,10 @@ module.exports = grammar({
         $.break,
         $.restart,
         $.end,
+        $.return,
+        $.async,
+        $.await,
+        $.yield,
         $.todo,
       ),
     if: ($) =>
@@ -137,6 +156,18 @@ module.exports = grammar({
       ),
     break: ($) => seq("break"),
     restart: ($) => seq("restart"),
+    return: ($) => seq("return", field("value", $._expression)),
+    yield: ($) => seq("yield", field("value", $._expression)),
+    async: ($) => seq("async", field("computation", $._expression)),
+    await: ($) =>
+      prec.right(
+        0,
+        seq(
+          "await",
+          field("coroutine", $._expression),
+          optional(seq("meanwhile", $._expression)),
+        ),
+      ),
     end: ($) => seq("end", choice("section")),
     todo: ($) => seq("todo", field("what", $.text_content), $._newline),
 
@@ -150,7 +181,15 @@ module.exports = grammar({
         ),
       ),
     command_attribute_list: ($) =>
-      prec.right(0, seq($._expression, repeat(seq(/,/, $._expression)))),
+      prec.right(
+        0,
+        seq($._command_parameter, repeat(seq(/ /, $._command_parameter))),
+      ),
+    _command_parameter: ($) =>
+      prec.right(
+        5,
+        choice($.identifier, $._literal, seq("(", $._expression, ")")),
+      ),
 
     _comment: ($) => choice($.inline_comment, $.attribute_comment),
     inline_comment: ($) => seq("#", /[^\n]*/, $._newline),
