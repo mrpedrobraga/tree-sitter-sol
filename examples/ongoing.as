@@ -1,2 +1,6 @@
 [main]
-let $a = some_command
+
+[add]
+param $x
+param $y
+return (x + y)

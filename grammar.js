@@ -45,6 +45,7 @@ module.exports = grammar({
         $._literal,
         $.let_binding,
         $.slot_binding,
+        $.param_binding,
         $._control_flow,
         $.symbol_ref,
         $._symbolic_expr,
@@ -96,6 +97,8 @@ module.exports = grammar({
         "<<",
         field("initializer", $._expression),
       ),
+    param_binding: ($) => seq("param", "$", field("name", $.identifier)),
+    put: ($) => seq("put", $.symbol_ref, "<<", $._expression),
 
     _control_flow: ($) =>
       choice(

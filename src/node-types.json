@@ -76,6 +76,10 @@
           "named": true
         },
         {
+          "type": "param_binding",
+          "named": true
+        },
+        {
           "type": "restart",
           "named": true
         },
@@ -200,6 +204,10 @@
           },
           {
             "type": "loop",
+            "named": true
+          },
+          {
+            "type": "param_binding",
             "named": true
           },
           {
@@ -336,6 +344,10 @@
             "named": true
           },
           {
+            "type": "param_binding",
+            "named": true
+          },
+          {
             "type": "restart",
             "named": true
           },
@@ -448,6 +460,10 @@
         },
         {
           "type": "loop",
+          "named": true
+        },
+        {
+          "type": "param_binding",
           "named": true
         },
         {
@@ -629,6 +645,10 @@
           "named": true
         },
         {
+          "type": "param_binding",
+          "named": true
+        },
+        {
           "type": "restart",
           "named": true
         },
@@ -790,6 +810,10 @@
             "named": true
           },
           {
+            "type": "param_binding",
+            "named": true
+          },
+          {
             "type": "restart",
             "named": true
           },
@@ -912,6 +936,10 @@
         },
         {
           "type": "loop",
+          "named": true
+        },
+        {
+          "type": "param_binding",
           "named": true
         },
         {
@@ -1093,6 +1121,10 @@
             "named": true
           },
           {
+            "type": "param_binding",
+            "named": true
+          },
+          {
             "type": "restart",
             "named": true
           },
@@ -1212,6 +1244,10 @@
           },
           {
             "type": "loop",
+            "named": true
+          },
+          {
+            "type": "param_binding",
             "named": true
           },
           {
@@ -1353,6 +1389,10 @@
             "named": true
           },
           {
+            "type": "param_binding",
+            "named": true
+          },
+          {
             "type": "restart",
             "named": true
           },
@@ -1491,6 +1531,10 @@
             "named": true
           },
           {
+            "type": "param_binding",
+            "named": true
+          },
+          {
             "type": "restart",
             "named": true
           },
@@ -1539,6 +1583,22 @@
     "named": true,
     "fields": {
       "tag_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "param_binding",
+    "named": true,
+    "fields": {
+      "name": {
         "multiple": false,
         "required": true,
         "types": [
@@ -1652,6 +1712,10 @@
           },
           {
             "type": "loop",
+            "named": true
+          },
+          {
+            "type": "param_binding",
             "named": true
           },
           {
@@ -1841,6 +1905,10 @@
           },
           {
             "type": "loop",
+            "named": true
+          },
+          {
+            "type": "param_binding",
             "named": true
           },
           {
@@ -2097,6 +2165,10 @@
             "named": true
           },
           {
+            "type": "param_binding",
+            "named": true
+          },
+          {
             "type": "restart",
             "named": true
           },
@@ -2246,6 +2318,10 @@
             "named": true
           },
           {
+            "type": "param_binding",
+            "named": true
+          },
+          {
             "type": "restart",
             "named": true
           },
@@ -2365,6 +2441,10 @@
           },
           {
             "type": "loop",
+            "named": true
+          },
+          {
+            "type": "param_binding",
             "named": true
           },
           {
@@ -2496,6 +2576,10 @@
             "named": true
           },
           {
+            "type": "param_binding",
+            "named": true
+          },
+          {
             "type": "restart",
             "named": true
           },
@@ -2615,6 +2699,10 @@
           },
           {
             "type": "loop",
+            "named": true
+          },
+          {
+            "type": "param_binding",
             "named": true
           },
           {
@@ -2746,6 +2834,10 @@
             "named": true
           },
           {
+            "type": "param_binding",
+            "named": true
+          },
+          {
             "type": "restart",
             "named": true
           },
@@ -2865,6 +2957,10 @@
           },
           {
             "type": "loop",
+            "named": true
+          },
+          {
+            "type": "param_binding",
             "named": true
           },
           {
@@ -2993,6 +3089,10 @@
           },
           {
             "type": "loop",
+            "named": true
+          },
+          {
+            "type": "param_binding",
             "named": true
           },
           {
@@ -3165,6 +3265,14 @@
   },
   {
     "type": "no",
+    "named": false
+  },
+  {
+    "type": "param",
+    "named": false
+  },
+  {
+    "type": "put",
     "named": false
   },
   {
