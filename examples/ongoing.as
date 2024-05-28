@@ -1,4 +1,4 @@
+# Hello World program in Aster!
+
 [main]
-log {
-  - Dialog
-}
+- Hello, World
