@@ -48,8 +48,8 @@ module.exports = grammar({
         $.param_binding,
         $._control_flow,
         $.symbol_ref,
-        $._symbolic_expr,
         $.command,
+        $.section_call,
       ),
     _grouping: ($) => seq("(", $.expression_list, ")"),
     symbol_ref: ($) => seq("$", field("symbol", seq($.identifier))),
@@ -97,7 +97,14 @@ module.exports = grammar({
         "<<",
         field("initializer", $._expression),
       ),
-    param_binding: ($) => seq("param", "$", field("name", $.identifier)),
+    param_binding: ($) =>
+      seq(
+        "param",
+        "$",
+        field("name", $.identifier),
+        ":",
+        field("constraint", $._expression),
+      ),
     put: ($) => seq("put", $.symbol_ref, "<<", $._expression),
 
     _control_flow: ($) =>
@@ -182,7 +189,7 @@ module.exports = grammar({
         seq(
           field("name", $.identifier),
           optional($.command_attribute_list),
-          $._newline,
+          optional($._newline),
         ),
       ),
     command_attribute_list: ($) =>
@@ -203,11 +210,16 @@ module.exports = grammar({
     identifier: (_) => /[a-zA-Z_][a-zA-Z0-9_]*/,
     _field_access: ($) => choice($.identifier, $.integer),
 
-    _symbolic_expr: ($) => choice($._bin_expr),
-    _bin_expr: ($) => choice($.addition),
-    addition: ($) => prec.right(3, seq($._expression, "+", $._expression)),
+    section_call: ($) =>
+      seq(
+        "$[",
+        field("name", $.section_name_expr),
+        "]",
+        field("parameters", $.command_attribute_list),
+      ),
 
-    _literal: ($) => choice($.boolean, $._number),
+    _literal: ($) => choice($.boolean, $._number, $.type),
+    type: ($) => choice("nat", "int", "float", "text", "truth", "character"),
     boolean: (_) => choice("true", "false", "yes", "no", "maybe"),
     _number: ($) => choice($.integer, $.float),
     integer: (_) => seq(/[0-9_]+/),

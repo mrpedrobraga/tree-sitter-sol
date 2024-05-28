@@ -1,6 +1,2 @@
 [main]
-
-[add]
-param $x
-param $y
-return (x + y)
+let $a = (sub (add 2 2) 3.0)
