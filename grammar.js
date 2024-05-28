@@ -7,7 +7,7 @@ module.exports = grammar({
   rules: {
     source_file: ($) =>
       seq(
-        optional(field("header", seq(optional($.header), "---"))),
+        optional(seq("---", field("header", optional($.header)), "---")),
         field("blocks", $.block_list),
       ),
 
@@ -51,7 +51,7 @@ module.exports = grammar({
     _grouping: ($) => seq("(", $.expression_list, ")"),
     symbol_ref: ($) => seq("$", field("symbol", seq($.identifier))),
 
-    speaker: ($) => seq("(", field("speaker", $.identifier), ")"),
+    speaker: ($) => seq("(", field("speaker", choice($.identifier, "&")), ")"),
     dialog: ($) =>
       seq(
         field("prefix", choice("-", "*", ">")),
