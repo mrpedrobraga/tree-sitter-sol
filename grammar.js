@@ -18,11 +18,12 @@ module.exports = grammar({
 
     section: ($) => seq($.section_name, repeat($._section_entry)),
     section_name: ($) => seq("[", field("name", $.identifier), "]"),
-    _section_entry: ($) => choice($.expression, $.dialog),
+    _section_entry: ($) => choice($.expression),
 
-    expression: ($) => choice($.symbol_ref, $.grouping, "0"),
+    expression: ($) =>
+      choice($.dialog, $.symbol_ref, $.grouping, $._literal, $._control_flow),
     grouping: ($) => seq("(", $.expression, ")"),
-    symbol_ref: ($) => choice($.identifier),
+    symbol_ref: ($) => choice("$", field("symbol", seq($.identifier))),
 
     dialog: ($) =>
       seq(
@@ -51,6 +52,30 @@ module.exports = grammar({
     markup_open_tag: ($) => seq("[", field("tag_name", $.identifier), "]"),
     markup_close_tag: ($) => "[/]",
 
+    _control_flow: ($) => choice($.if),
+    if: ($) =>
+      seq(
+        "if",
+        field("condition", $.expression),
+        "then",
+        field("consequence", $.expression),
+      ),
+    unless: ($) =>
+      seq(
+        "unless",
+        field("condition", $.expression),
+        "then",
+        field("consequence", $.expression),
+      ),
+
+    command: ($) => seq(field("name", $.identifier)),
+
     identifier: (_) => /[a-zA-Z_][a-zA-Z0-9_]*/,
+
+    _literal: ($) => choice($.boolean, $._number),
+    boolean: (_) => choice("true", "false", "yes", "no", "maybe"),
+    _number: ($) => choice($.integer, $.float),
+    integer: (_) => seq(/[0-9_]+/),
+    float: (_) => seq(/[0-9_]+(\.[0-9_]+)?/),
   },
 });
