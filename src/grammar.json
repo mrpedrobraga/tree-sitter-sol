@@ -589,12 +589,22 @@
       }
     },
     "break": {
-      "type": "STRING",
-      "value": "break"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "break"
+        }
+      ]
     },
     "restart": {
-      "type": "STRING",
-      "value": "restart"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "restart"
+        }
+      ]
     },
     "end": {
       "type": "SEQ",

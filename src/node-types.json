@@ -20,6 +20,11 @@
     "fields": {}
   },
   {
+    "type": "break",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "command",
     "named": true,
     "fields": {
@@ -635,6 +640,11 @@
         ]
       }
     }
+  },
+  {
+    "type": "restart",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "section",
@@ -1386,7 +1396,7 @@
   },
   {
     "type": "break",
-    "named": true
+    "named": false
   },
   {
     "type": "do",
@@ -1430,7 +1440,7 @@
   },
   {
     "type": "restart",
-    "named": true
+    "named": false
   },
   {
     "type": "section",
