@@ -76,6 +76,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -89,6 +93,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -221,6 +229,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -234,6 +246,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -348,6 +364,10 @@
           "named": true
         },
         {
+          "type": "log",
+          "named": true
+        },
+        {
           "type": "loop",
           "named": true
         },
@@ -361,6 +381,10 @@
         },
         {
           "type": "return",
+          "named": true
+        },
+        {
+          "type": "save",
           "named": true
         },
         {
@@ -538,6 +562,10 @@
           "named": true
         },
         {
+          "type": "log",
+          "named": true
+        },
+        {
           "type": "loop",
           "named": true
         },
@@ -551,6 +579,10 @@
         },
         {
           "type": "return",
+          "named": true
+        },
+        {
+          "type": "save",
           "named": true
         },
         {
@@ -711,6 +743,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -724,6 +760,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -848,6 +888,10 @@
           "named": true
         },
         {
+          "type": "log",
+          "named": true
+        },
+        {
           "type": "loop",
           "named": true
         },
@@ -861,6 +905,10 @@
         },
         {
           "type": "return",
+          "named": true
+        },
+        {
+          "type": "save",
           "named": true
         },
         {
@@ -1038,6 +1086,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -1051,6 +1103,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -1172,6 +1228,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -1185,6 +1245,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -1322,6 +1386,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -1335,6 +1403,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -1389,6 +1461,22 @@
         "types": [
           {
             "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "log",
+    "named": true,
+    "fields": {
+      "what": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "text_content",
             "named": true
           }
         ]
@@ -1472,6 +1560,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -1485,6 +1577,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -1628,6 +1724,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -1641,6 +1741,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -1798,6 +1902,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -1811,6 +1919,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -1860,6 +1972,11 @@
         ]
       }
     }
+  },
+  {
+    "type": "save",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "section",
@@ -2025,6 +2142,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -2038,6 +2159,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -2290,6 +2415,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -2303,6 +2432,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -2456,6 +2589,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -2469,6 +2606,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -2590,6 +2731,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -2603,6 +2748,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -2730,6 +2879,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -2743,6 +2896,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -2864,6 +3021,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -2877,6 +3038,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -3004,6 +3169,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -3017,6 +3186,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -3138,6 +3311,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -3151,6 +3328,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -3278,6 +3459,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -3291,6 +3476,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -3412,6 +3601,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -3425,6 +3618,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -3552,6 +3749,10 @@
             "named": true
           },
           {
+            "type": "log",
+            "named": true
+          },
+          {
             "type": "loop",
             "named": true
           },
@@ -3565,6 +3766,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "save",
             "named": true
           },
           {
@@ -3740,6 +3945,10 @@
     "named": false
   },
   {
+    "type": "log",
+    "named": false
+  },
+  {
     "type": "loop",
     "named": false
   },
@@ -3777,6 +3986,10 @@
   },
   {
     "type": "return",
+    "named": false
+  },
+  {
+    "type": "save",
     "named": false
   },
   {

@@ -65,11 +65,14 @@ module.exports = grammar({
       ),
 
     text_content: ($) =>
-      repeat1(
-        choice(
-          prec.right(3, $.text_expr_fragment),
-          prec.right(3, $.text_escape_fragment),
-          $.text_text_fragment,
+      prec.right(
+        0,
+        repeat1(
+          choice(
+            prec.right(3, $.text_expr_fragment),
+            prec.right(3, $.text_escape_fragment),
+            $.text_text_fragment,
+          ),
         ),
       ),
     text_text_fragment: ($) => seq(/[^\n\{\[]+/),
@@ -125,7 +128,7 @@ module.exports = grammar({
         $.async,
         $.await,
         $.yield,
-        $.todo,
+        $._project,
       ),
     with: ($) =>
       prec.right(
@@ -194,7 +197,12 @@ module.exports = grammar({
         ),
       ),
     end: ($) => seq("end", choice("section")),
-    todo: ($) => seq("todo", field("what", $.text_content), $._newline),
+
+    _project: ($) => choice($.todo, $.save, $.log),
+    todo: ($) =>
+      seq("todo", field("what", $.text_content), optional($._newline)),
+    log: ($) => seq("log", field("what", $.text_content), optional($._newline)),
+    save: ($) => seq("save"),
 
     command: ($) =>
       prec.right(
