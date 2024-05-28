@@ -1,4 +1,4 @@
 [main]
 loop (
-    - Hello, forever!
+    restart
 )

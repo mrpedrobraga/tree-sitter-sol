@@ -119,8 +119,8 @@ module.exports = grammar({
           field("body", $._expression),
         ),
       ),
-    break: ($) => "break",
-    restart: ($) => "restart",
+    break: ($) => seq("break"),
+    restart: ($) => seq("restart"),
     end: ($) => seq("end", choice("section")),
 
     command: ($) =>
