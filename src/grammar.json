@@ -22,7 +22,7 @@
         },
         {
           "type": "PATTERN",
-          "value": "\\n"
+          "value": "\\n\\s*"
         }
       ]
     },
@@ -38,7 +38,7 @@
         },
         {
           "type": "PATTERN",
-          "value": "\\n"
+          "value": "\\n\\s*"
         }
       ]
     },
@@ -122,6 +122,105 @@
         {
           "type": "SYMBOL",
           "name": "_literal"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "dialog"
+        }
+      ]
+    },
+    "dialog": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_dialog_prefix"
+        },
+        {
+          "type": "FIELD",
+          "name": "content",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_dialog_content"
+          }
+        }
+      ]
+    },
+    "_dialog_prefix": {
+      "type": "FIELD",
+      "name": "prefix",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "-"
+          },
+          {
+            "type": "STRING",
+            "value": "*"
+          },
+          {
+            "type": "STRING",
+            "value": ">"
+          }
+        ]
+      }
+    },
+    "_dialog_content": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "text_raw_fragment"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "text_escape_fragment"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "text_expr_fragment"
+          }
+        ]
+      }
+    },
+    "text_raw_fragment": {
+      "type": "PATTERN",
+      "value": "[^\\\\;\\r\\f\\n\\{\\}]+"
+    },
+    "text_escape_fragment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "IMMEDIATE_TOKEN",
+          "content": {
+            "type": "STRING",
+            "value": "\\"
+          }
+        },
+        {
+          "type": "PATTERN",
+          "value": "."
+        }
+      ]
+    },
+    "text_expr_fragment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expression_list_semicolon"
+        },
+        {
+          "type": "STRING",
+          "value": "}"
         }
       ]
     },
@@ -144,29 +243,62 @@
         {
           "type": "SYMBOL",
           "name": "string_single"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string_double"
         }
       ]
     },
     "string_single": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "'"
-        },
-        {
-          "type": "FIELD",
-          "name": "content",
-          "content": {
-            "type": "PATTERN",
-            "value": "[^\"]*"
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "'"
+          },
+          {
+            "type": "FIELD",
+            "name": "content",
+            "content": {
+              "type": "PATTERN",
+              "value": "[^\\']*"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "'"
           }
-        },
-        {
-          "type": "STRING",
-          "value": "'"
-        }
-      ]
+        ]
+      }
+    },
+    "string_double": {
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "\""
+          },
+          {
+            "type": "FIELD",
+            "name": "content",
+            "content": {
+              "type": "PATTERN",
+              "value": "[^\\\"]*"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "\""
+          }
+        ]
+      }
     },
     "_number_literal": {
       "type": "CHOICE",
