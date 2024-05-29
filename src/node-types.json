@@ -42,6 +42,36 @@
     }
   },
   {
+    "type": "doc_comment",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "comment_raw_fragment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inline_comment",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "comment_raw_fragment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "fields": {},
@@ -54,7 +84,15 @@
           "named": true
         },
         {
+          "type": "doc_comment",
+          "named": true
+        },
+        {
           "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "inline_comment",
           "named": true
         },
         {
@@ -67,6 +105,10 @@
         },
         {
           "type": "string_single",
+          "named": true
+        },
+        {
+          "type": "todo_comment",
           "named": true
         }
       ]
@@ -100,7 +142,15 @@
           "named": true
         },
         {
+          "type": "doc_comment",
+          "named": true
+        },
+        {
           "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "inline_comment",
           "named": true
         },
         {
@@ -114,12 +164,44 @@
         {
           "type": "string_single",
           "named": true
+        },
+        {
+          "type": "todo_comment",
+          "named": true
         }
       ]
     }
   },
   {
+    "type": "todo_comment",
+    "named": true,
+    "fields": {
+      "what": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "comment_raw_fragment",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "\"",
+    "named": false
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
+    "type": "##",
+    "named": false
+  },
+  {
+    "type": "#todo",
     "named": false
   },
   {
@@ -149,6 +231,10 @@
   {
     "type": "\\",
     "named": false
+  },
+  {
+    "type": "comment_raw_fragment",
+    "named": true
   },
   {
     "type": "float_literal",

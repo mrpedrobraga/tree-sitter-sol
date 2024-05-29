@@ -126,6 +126,10 @@
         {
           "type": "SYMBOL",
           "name": "dialog"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comment"
         }
       ]
     },
@@ -189,7 +193,7 @@
     },
     "text_raw_fragment": {
       "type": "PATTERN",
-      "value": "[^\\\\;\\r\\f\\n\\{\\}]+"
+      "value": "[^\\\\;\\n\\{\\}]+"
     },
     "text_escape_fragment": {
       "type": "SEQ",
@@ -223,6 +227,82 @@
           "value": "}"
         }
       ]
+    },
+    "_comment": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "inline_comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "doc_comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "todo_comment"
+        }
+      ]
+    },
+    "doc_comment": {
+      "type": "PREC_RIGHT",
+      "value": 2,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "##"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "comment_raw_fragment"
+          }
+        ]
+      }
+    },
+    "todo_comment": {
+      "type": "PREC_RIGHT",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "#todo"
+          },
+          {
+            "type": "FIELD",
+            "name": "what",
+            "content": {
+              "type": "SYMBOL",
+              "name": "comment_raw_fragment"
+            }
+          }
+        ]
+      }
+    },
+    "inline_comment": {
+      "type": "PREC_RIGHT",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "#"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "comment_raw_fragment"
+          }
+        ]
+      }
+    },
+    "comment_raw_fragment": {
+      "type": "PATTERN",
+      "value": "[^\\n]+"
     },
     "_literal": {
       "type": "CHOICE",
