@@ -1,1 +1,1 @@
-yield foo()
+break
