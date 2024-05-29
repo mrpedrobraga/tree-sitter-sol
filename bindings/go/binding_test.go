@@ -1,15 +1,15 @@
-package tree_sitter_aster_test
+package tree_sitter_sol_test
 
 import (
 	"testing"
 
 	tree_sitter "github.com/smacker/go-tree-sitter"
-	"github.com/tree-sitter/tree-sitter-aster"
+	"github.com/tree-sitter/tree-sitter-sol"
 )
 
 func TestCanLoadGrammar(t *testing.T) {
-	language := tree_sitter.NewLanguage(tree_sitter_aster.Language())
+	language := tree_sitter.NewLanguage(tree_sitter_sol.Language())
 	if language == nil {
-		t.Errorf("Error loading Aster grammar")
+		t.Errorf("Error loading Sol grammar")
 	}
 }

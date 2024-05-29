@@ -1,7 +1,7 @@
 {
-  "name": "tree-sitter-aster",
+  "name": "tree-sitter-sol",
   "version": "1.0.0",
-  "description": "Aster support for Tree Sitter.",
+  "description": "Sol support for Tree Sitter.",
   "main": "index.js",
   "types": "bindings/node",
   "scripts": {
@@ -12,7 +12,7 @@
   "keywords": [
     "parser",
     "incremental",
-    "aster"
+    "sol"
   ],
   "files": [
     "grammar.js",
@@ -40,8 +40,8 @@
   },
   "tree-sitter": [
     {
-      "scope": "source.aster",
-      "injection-regex": "^aster$"
+      "scope": "source.sol",
+      "injection-regex": "^sol$"
     }
   ]
 }

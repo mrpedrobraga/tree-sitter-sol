@@ -1,6 +1,6 @@
 VERSION := 0.0.1
 
-LANGUAGE_NAME := tree-sitter-aster
+LANGUAGE_NAME := tree-sitter-sol
 
 # repository
 SRC_DIR := src

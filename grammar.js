@@ -1,7 +1,7 @@
 const SPACE_REGEX = / +/;
 
 module.exports = grammar({
-  name: "aster",
+  name: "sol",
 
   word: ($) => $.identifier,
   extras: ($) => [/\s+/],

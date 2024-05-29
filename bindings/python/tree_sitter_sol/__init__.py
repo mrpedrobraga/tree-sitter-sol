@@ -1,4 +1,4 @@
-"Aster grammar for tree-sitter"
+"Sol grammar for tree-sitter"
 
 from ._binding import language
 

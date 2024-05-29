@@ -1,4 +1,4 @@
-module github.com/tree-sitter/tree-sitter-aster
+module github.com/tree-sitter/tree-sitter-sol
 
 go 1.22
 
