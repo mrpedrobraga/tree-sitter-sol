@@ -1,1 +1,3 @@
-break
+scene "My Scene"
+
+end

@@ -362,6 +362,11 @@
     }
   },
   {
+    "type": "break",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "call_argument",
     "named": true,
     "fields": {
@@ -581,7 +586,7 @@
     "fields": {
       "block": {
         "multiple": true,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": ";",
@@ -709,7 +714,7 @@
       },
       "iterator": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "async",
@@ -1134,7 +1139,7 @@
     "fields": {
       "condition": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "async",
@@ -1366,7 +1371,7 @@
       },
       "then": {
         "multiple": true,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": ";",
@@ -1504,9 +1509,13 @@
     "named": true,
     "fields": {
       "block": {
-        "multiple": false,
-        "required": true,
+        "multiple": true,
+        "required": false,
         "types": [
+          {
+            "type": ";",
+            "named": false
+          },
           {
             "type": "async",
             "named": true
@@ -1865,7 +1874,7 @@
     "fields": {
       "content": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "scene_content",
@@ -2594,7 +2603,7 @@
       },
       "then": {
         "multiple": true,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": ";",
@@ -2718,7 +2727,7 @@
     "fields": {
       "block": {
         "multiple": true,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": ";",
@@ -2836,7 +2845,7 @@
       },
       "condition": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "async",
@@ -2956,7 +2965,7 @@
     "fields": {
       "block": {
         "multiple": true,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": ";",
@@ -3074,7 +3083,7 @@
       },
       "condition": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "async",
@@ -3394,7 +3403,7 @@
   },
   {
     "type": "break",
-    "named": true
+    "named": false
   },
   {
     "type": "comment_raw_fragment",

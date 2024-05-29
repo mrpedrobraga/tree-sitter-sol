@@ -142,7 +142,7 @@ module.exports = grammar({
       seq(
         choice("scene", "fn", "action"),
         field("name", $._rich_identifier),
-        field("content", $.scene_content),
+        field("content", optional($.scene_content)),
         "end",
       ),
     scene_content: ($) => $._expression_list_semicolon,
@@ -150,10 +150,12 @@ module.exports = grammar({
     if: ($) =>
       seq(
         "if",
-        field("condition", $._expression),
+        field("condition", optional($._expression)),
         "then",
-        field("then", $._expression_list_semicolon),
-        optional(seq("else", field("else", $._expression_list_semicolon))),
+        field("then", optional($._expression_list_semicolon)),
+        optional(
+          seq("else", field("else", optional($._expression_list_semicolon))),
+        ),
         "end",
       ),
     unless: ($) =>
@@ -161,37 +163,44 @@ module.exports = grammar({
         "unless",
         field("condition", $._expression),
         "then",
-        field("then", $._expression_list_semicolon),
-        optional(seq("else", field("else", $._expression_list_semicolon))),
+        field("then", optional($._expression_list_semicolon)),
+        optional(
+          seq("else", field("else", optional($._expression_list_semicolon))),
+        ),
         "end",
       ),
-    loop: ($) => seq("loop", field("block", $._expression), "end"),
+    loop: ($) =>
+      seq(
+        "loop",
+        field("block", optional($._expression_list_semicolon)),
+        "end",
+      ),
     while: ($) =>
       seq(
         "while",
-        field("condition", $._expression),
+        field("condition", optional($._expression)),
         "do",
-        field("block", $._expression_list_semicolon),
+        field("block", optional($._expression_list_semicolon)),
         "end",
       ),
     until: ($) =>
       seq(
         "until",
-        field("condition", $._expression),
+        field("condition", optional($._expression)),
         "do",
-        field("block", $._expression_list_semicolon),
+        field("block", optional($._expression_list_semicolon)),
         "end",
       ),
     for: ($) =>
       seq(
         "for",
         seq(field("iteration_param", $.identifier), "in"),
-        field("iterator", $._expression),
+        field("iterator", optional($._expression)),
         "do",
-        field("block", $._expression_list_semicolon),
+        field("block", optional($._expression_list_semicolon)),
         "end",
       ),
-    break: ($) => "break",
+    break: ($) => seq("break"),
     return: ($) => prec.left(0, seq("return", field("value", $._expression))),
     next: ($) => prec.left(0, seq("next", field("value", $._expression))),
     yield: ($) => prec.left(seq("yield", field("value", $._expression))),
@@ -204,7 +213,7 @@ module.exports = grammar({
           optional(
             seq(
               "meanwhile",
-              field("meanwhile", $._expression_list_semicolon),
+              field("meanwhile", optional($._expression_list_semicolon)),
               "end",
             ),
           ),
