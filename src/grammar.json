@@ -121,11 +121,15 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "grouping"
+        },
+        {
+          "type": "SYMBOL",
           "name": "_literal"
         },
         {
           "type": "SYMBOL",
-          "name": "dialog"
+          "name": "_dialog_expr"
         },
         {
           "type": "SYMBOL",
@@ -142,6 +146,36 @@
         {
           "type": "SYMBOL",
           "name": "function_call"
+        }
+      ]
+    },
+    "grouping": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expression_list_semicolon"
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "_dialog_expr": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "dialog"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "speaker_marker"
         }
       ]
     },
@@ -237,6 +271,48 @@
         {
           "type": "STRING",
           "value": "}"
+        }
+      ]
+    },
+    "speaker_marker": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "(("
+        },
+        {
+          "type": "FIELD",
+          "name": "speaker",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "identifier"
+              },
+              {
+                "type": "STRING",
+                "value": "&"
+              }
+            ]
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "call_argument_list"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "))"
         }
       ]
     },
@@ -341,8 +417,18 @@
           }
         },
         {
-          "type": "STRING",
-          "value": "("
+          "type": "IMMEDIATE_TOKEN",
+          "content": {
+            "type": "PATTERN",
+            "value": "[ \\t\\r\\f]+"
+          }
+        },
+        {
+          "type": "IMMEDIATE_TOKEN",
+          "content": {
+            "type": "STRING",
+            "value": "("
+          }
         },
         {
           "type": "FIELD",

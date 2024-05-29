@@ -23,14 +23,18 @@ module.exports = grammar({
 
     _expression: ($) =>
       choice(
+        $.grouping,
         $._literal,
-        $.dialog,
+        $._dialog_expr,
         $._comment,
         $.symbol_ref,
         $.unit_call,
         $.function_call,
       ),
 
+    grouping: ($) => seq("(", $._expression_list_semicolon, ")"),
+
+    _dialog_expr: ($) => choice($.dialog, $.speaker_marker),
     dialog: ($) => seq($._dialog_prefix, field("content", $._dialog_content)),
     _dialog_prefix: ($) => field("prefix", choice("-", "*", ">")),
     _dialog_content: ($) =>
@@ -45,6 +49,14 @@ module.exports = grammar({
     text_escape_fragment: ($) => seq(token.immediate("\\"), /./),
     text_expr_fragment: ($) => seq("{", $._expression_list_semicolon, "}"),
 
+    speaker_marker: ($) =>
+      seq(
+        "((",
+        field("speaker", choice($.identifier, "&")),
+        optional($.call_argument_list),
+        "))",
+      ),
+
     _comment: ($) => choice($.inline_comment, $.doc_comment, $.todo_comment),
     doc_comment: ($) => prec.right(2, seq("##", $.comment_raw_fragment)),
     todo_comment: ($) =>
@@ -58,7 +70,8 @@ module.exports = grammar({
     function_call: ($) =>
       seq(
         field("callee", $._expression),
-        "(",
+        token.immediate(/[ \t\r\f]+/),
+        token.immediate("("),
         field("arguments", optional($.call_argument_list)),
         ")",
       ),
