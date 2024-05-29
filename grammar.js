@@ -2,12 +2,14 @@ const SPACING = /[ \r\f\t]+/;
 
 module.exports = grammar({
   name: "sol",
-  extras: ($) => [/\s/],
+  word: ($) => $.identifier,
+  extras: ($) => [/\s+/],
   rules: {
     source_file: ($) => seq($._expression_list_semicolon),
 
     _semicolon: ($) => choice(repeat1(";"), /\n\s*/),
     _comma: ($) => choice(repeat1(","), /\n\s*/),
+    _immediate_spacing: ($) => token.immediate(SPACING),
 
     _expression_list_semicolon: ($) =>
       seq(
@@ -33,6 +35,7 @@ module.exports = grammar({
         $.symbol_ref,
         $.unit_call,
         $.function_call,
+        $._block,
       ),
 
     header: ($) =>
@@ -55,19 +58,23 @@ module.exports = grammar({
       ),
     header_tag_content: ($) =>
       repeat1(seq($._header_tag_fragment, token.immediate(SPACING))),
-    _header_tag_fragment: ($) =>
-      choice($.header_tag_raw_fragment, $.header_tag_expr_fragment),
+    _header_tag_fragment: ($) => choice($.header_tag_raw_fragment),
     header_tag_raw_fragment: ($) => /[^\n\{\}]+/,
-    header_tag_expr_fragment: ($) =>
-      seq("{", $._expression_list_semicolon, "}"),
 
     grouping: ($) => seq("(", $._expression_list_semicolon, ")"),
 
     _dialog_expr: ($) => choice($.dialog, $.speaker_marker),
     dialog: ($) =>
-      seq(field("prefix", $.dialog_prefix), field("content", $.dialog_content)),
+      prec.right(
+        1,
+        seq(
+          field("prefix", $.dialog_prefix),
+          optional(token.immediate(SPACING)),
+          field("content", $.dialog_content),
+        ),
+      ),
     dialog_prefix: ($) => choice("-", "*", ">"),
-    dialog_content: ($) => repeat1($._text_fragment),
+    dialog_content: ($) => prec.right(0, repeat1($._text_fragment)),
     _text_fragment: ($) =>
       choice($.text_raw_fragment, $.text_escape_fragment, $.text_expr_fragment),
     text_raw_fragment: ($) => choice(token.immediate(SPACING), /[^\\;\n\{]+/),
@@ -76,10 +83,10 @@ module.exports = grammar({
 
     speaker_marker: ($) =>
       seq(
-        "((",
+        "[",
         field("speaker", choice($.identifier, "&")),
         optional($.call_argument_list),
-        "))",
+        "]",
       ),
 
     _comment: ($) => choice($.inline_comment, $.doc_comment, $.todo_comment),
@@ -89,16 +96,15 @@ module.exports = grammar({
     inline_comment: ($) => prec.right(1, seq("#", $.comment_raw_fragment)),
     comment_raw_fragment: ($) => /[^\n]+/,
 
-    identifier: ($) => /[_a-zA-Z][_a-zA-Z0-9]*/,
-
-    symbol_ref: ($) => choice($.identifier),
     function_call: ($) =>
-      seq(
-        field("callee", $._expression),
-        token.immediate(/[ \t\r\f]+/),
-        token.immediate("("),
-        field("arguments", optional($.call_argument_list)),
-        ")",
+      prec(
+        1,
+        seq(
+          field("callee", $._expression),
+          token.immediate("("),
+          field("arguments", optional($.call_argument_list)),
+          ")",
+        ),
       ),
     call_argument_list: ($) =>
       seq(
@@ -113,11 +119,102 @@ module.exports = grammar({
       ),
 
     unit_call: ($) =>
-      seq(
-        field("scalar", $._number_literal),
-        optional(token.immediate(SPACING)),
-        field("unit", $.identifier),
+      seq(field("scalar", $._number_literal), field("unit", $.identifier)),
+
+    _block: ($) =>
+      choice(
+        $.scene,
+        $.if,
+        $.unless,
+        $.loop,
+        $.while,
+        $.until,
+        $.for,
+        $.break,
+        $.return,
+        $.next,
+        $.yield,
+        $.async,
+        $.await,
       ),
+    _rich_identifier: ($) => choice($.identifier, $._string_literal),
+    scene: ($) =>
+      seq(
+        choice("scene", "fn", "action"),
+        field("name", $._rich_identifier),
+        field("content", $.scene_content),
+        "end",
+      ),
+    scene_content: ($) => $._expression_list_semicolon,
+
+    if: ($) =>
+      seq(
+        "if",
+        field("condition", $._expression),
+        "then",
+        field("then", $._expression_list_semicolon),
+        optional(seq("else", field("else", $._expression_list_semicolon))),
+        "end",
+      ),
+    unless: ($) =>
+      seq(
+        "unless",
+        field("condition", $._expression),
+        "then",
+        field("then", $._expression_list_semicolon),
+        optional(seq("else", field("else", $._expression_list_semicolon))),
+        "end",
+      ),
+    loop: ($) => seq("loop", field("block", $._expression), "end"),
+    while: ($) =>
+      seq(
+        "while",
+        field("condition", $._expression),
+        "do",
+        field("block", $._expression_list_semicolon),
+        "end",
+      ),
+    until: ($) =>
+      seq(
+        "until",
+        field("condition", $._expression),
+        "do",
+        field("block", $._expression_list_semicolon),
+        "end",
+      ),
+    for: ($) =>
+      seq(
+        "for",
+        seq(field("iteration_param", $.identifier), "in"),
+        field("iterator", $._expression),
+        "do",
+        field("block", $._expression_list_semicolon),
+        "end",
+      ),
+    break: ($) => "break",
+    return: ($) => prec.left(0, seq("return", field("value", $._expression))),
+    next: ($) => prec.left(0, seq("next", field("value", $._expression))),
+    yield: ($) => prec.left(seq("yield", field("value", $._expression))),
+    await: ($) =>
+      prec.right(
+        0,
+        seq(
+          "await",
+          field("what", $._expression),
+          optional(
+            seq(
+              "meanwhile",
+              field("meanwhile", $._expression_list_semicolon),
+              "end",
+            ),
+          ),
+        ),
+      ),
+    async: ($) =>
+      seq("async", field("block", $._expression_list_semicolon), "end"),
+
+    identifier: ($) => /[_a-zA-Z][_a-zA-Z0-9]*/,
+    symbol_ref: ($) => $.identifier,
 
     _literal: ($) => choice($._number_literal, $._string_literal),
 

@@ -1,22 +1,28 @@
 [
   {
-    "type": "call_argument",
+    "type": "async",
     "named": true,
     "fields": {
-      "name": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "value": {
-        "multiple": false,
+      "block": {
+        "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
           {
             "type": "dialog",
             "named": true
@@ -27,6 +33,10 @@
           },
           {
             "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
             "named": true
           },
           {
@@ -42,11 +52,31 @@
             "named": true
           },
           {
+            "type": "if",
+            "named": true
+          },
+          {
             "type": "inline_comment",
             "named": true
           },
           {
             "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
             "named": true
           },
           {
@@ -71,6 +101,390 @@
           },
           {
             "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "await",
+    "named": true,
+    "fields": {
+      "meanwhile": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      },
+      "what": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "call_argument",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
             "named": true
           }
         ]
@@ -162,23 +576,29 @@
     }
   },
   {
-    "type": "function_call",
+    "type": "for",
     "named": true,
     "fields": {
-      "arguments": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "call_argument_list",
-            "named": true
-          }
-        ]
-      },
-      "callee": {
-        "multiple": false,
+      "block": {
+        "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
           {
             "type": "dialog",
             "named": true
@@ -189,6 +609,10 @@
           },
           {
             "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
             "named": true
           },
           {
@@ -204,11 +628,31 @@
             "named": true
           },
           {
+            "type": "if",
+            "named": true
+          },
+          {
             "type": "inline_comment",
             "named": true
           },
           {
             "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
             "named": true
           },
           {
@@ -234,6 +678,276 @@
           {
             "type": "unit_call",
             "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      },
+      "iteration_param": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "iterator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "function_call",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "call_argument_list",
+            "named": true
+          }
+        ]
+      },
+      "callee": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
           }
         ]
       }
@@ -248,6 +962,18 @@
       "required": false,
       "types": [
         {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
+          "named": true
+        },
+        {
+          "type": "break",
+          "named": true
+        },
+        {
           "type": "dialog",
           "named": true
         },
@@ -257,6 +983,10 @@
         },
         {
           "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "for",
           "named": true
         },
         {
@@ -272,11 +1002,31 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "inline_comment",
           "named": true
         },
         {
           "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "next",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "scene",
           "named": true
         },
         {
@@ -301,6 +1051,22 @@
         },
         {
           "type": "unit_call",
+          "named": true
+        },
+        {
+          "type": "unless",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        },
+        {
+          "type": "yield",
           "named": true
         }
       ]
@@ -356,10 +1122,6 @@
       "required": true,
       "types": [
         {
-          "type": "header_tag_expr_fragment",
-          "named": true
-        },
-        {
           "type": "header_tag_raw_fragment",
           "named": true
         }
@@ -367,70 +1129,359 @@
     }
   },
   {
-    "type": "header_tag_expr_fragment",
+    "type": "if",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "dialog",
-          "named": true
-        },
-        {
-          "type": "doc_comment",
-          "named": true
-        },
-        {
-          "type": "float_literal",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "grouping",
-          "named": true
-        },
-        {
-          "type": "header",
-          "named": true
-        },
-        {
-          "type": "inline_comment",
-          "named": true
-        },
-        {
-          "type": "int_literal",
-          "named": true
-        },
-        {
-          "type": "speaker_marker",
-          "named": true
-        },
-        {
-          "type": "string_double",
-          "named": true
-        },
-        {
-          "type": "string_single",
-          "named": true
-        },
-        {
-          "type": "symbol_ref",
-          "named": true
-        },
-        {
-          "type": "todo_comment",
-          "named": true
-        },
-        {
-          "type": "unit_call",
-          "named": true
-        }
-      ]
+    "fields": {
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      },
+      "else": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      },
+      "then": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -449,13 +1500,419 @@
     }
   },
   {
-    "type": "source_file",
+    "type": "loop",
+    "named": true,
+    "fields": {
+      "block": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "next",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "return",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "scene",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "scene_content",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "scene_content",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
+          "named": true
+        },
+        {
+          "type": "break",
+          "named": true
+        },
         {
           "type": "dialog",
           "named": true
@@ -466,6 +1923,10 @@
         },
         {
           "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "for",
           "named": true
         },
         {
@@ -481,11 +1942,31 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "inline_comment",
           "named": true
         },
         {
           "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "next",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "scene",
           "named": true
         },
         {
@@ -510,6 +1991,141 @@
         },
         {
           "type": "unit_call",
+          "named": true
+        },
+        {
+          "type": "unless",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        },
+        {
+          "type": "yield",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
+          "named": true
+        },
+        {
+          "type": "break",
+          "named": true
+        },
+        {
+          "type": "dialog",
+          "named": true
+        },
+        {
+          "type": "doc_comment",
+          "named": true
+        },
+        {
+          "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "grouping",
+          "named": true
+        },
+        {
+          "type": "header",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "inline_comment",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "next",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "scene",
+          "named": true
+        },
+        {
+          "type": "speaker_marker",
+          "named": true
+        },
+        {
+          "type": "string_double",
+          "named": true
+        },
+        {
+          "type": "string_single",
+          "named": true
+        },
+        {
+          "type": "symbol_ref",
+          "named": true
+        },
+        {
+          "type": "todo_comment",
+          "named": true
+        },
+        {
+          "type": "unit_call",
+          "named": true
+        },
+        {
+          "type": "unless",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        },
+        {
+          "type": "yield",
           "named": true
         }
       ]
@@ -579,6 +2195,18 @@
       "required": false,
       "types": [
         {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
+          "named": true
+        },
+        {
+          "type": "break",
+          "named": true
+        },
+        {
           "type": "dialog",
           "named": true
         },
@@ -588,6 +2216,10 @@
         },
         {
           "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "for",
           "named": true
         },
         {
@@ -603,11 +2235,31 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "inline_comment",
           "named": true
         },
         {
           "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "next",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "scene",
           "named": true
         },
         {
@@ -632,6 +2284,22 @@
         },
         {
           "type": "unit_call",
+          "named": true
+        },
+        {
+          "type": "unless",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        },
+        {
+          "type": "yield",
           "named": true
         }
       ]
@@ -689,6 +2357,958 @@
     }
   },
   {
+    "type": "unless",
+    "named": true,
+    "fields": {
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      },
+      "else": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      },
+      "then": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "until",
+    "named": true,
+    "fields": {
+      "block": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "while",
+    "named": true,
+    "fields": {
+      "block": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "yield",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "dialog",
+            "named": true
+          },
+          {
+            "type": "doc_comment",
+            "named": true
+          },
+          {
+            "type": "float_literal",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "inline_comment",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "scene",
+            "named": true
+          },
+          {
+            "type": "speaker_marker",
+            "named": true
+          },
+          {
+            "type": "string_double",
+            "named": true
+          },
+          {
+            "type": "string_single",
+            "named": true
+          },
+          {
+            "type": "symbol_ref",
+            "named": true
+          },
+          {
+            "type": "todo_comment",
+            "named": true
+          },
+          {
+            "type": "unit_call",
+            "named": true
+          },
+          {
+            "type": "unless",
+            "named": true
+          },
+          {
+            "type": "until",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "yield",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "\"",
     "named": false
   },
@@ -717,15 +3337,7 @@
     "named": false
   },
   {
-    "type": "((",
-    "named": false
-  },
-  {
     "type": ")",
-    "named": false
-  },
-  {
-    "type": "))",
     "named": false
   },
   {
@@ -761,12 +3373,56 @@
     "named": false
   },
   {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "action",
+    "named": false
+  },
+  {
+    "type": "async",
+    "named": false
+  },
+  {
+    "type": "await",
+    "named": false
+  },
+  {
+    "type": "break",
+    "named": true
+  },
+  {
     "type": "comment_raw_fragment",
     "named": true
   },
   {
+    "type": "do",
+    "named": false
+  },
+  {
+    "type": "else",
+    "named": false
+  },
+  {
+    "type": "end",
+    "named": false
+  },
+  {
     "type": "float_literal",
     "named": true
+  },
+  {
+    "type": "fn",
+    "named": false
+  },
+  {
+    "type": "for",
+    "named": false
   },
   {
     "type": "header_tag_raw_fragment",
@@ -777,12 +3433,60 @@
     "named": true
   },
   {
+    "type": "if",
+    "named": false
+  },
+  {
+    "type": "in",
+    "named": false
+  },
+  {
     "type": "int_literal",
     "named": true
   },
   {
+    "type": "loop",
+    "named": false
+  },
+  {
+    "type": "meanwhile",
+    "named": false
+  },
+  {
+    "type": "next",
+    "named": false
+  },
+  {
+    "type": "return",
+    "named": false
+  },
+  {
+    "type": "scene",
+    "named": false
+  },
+  {
     "type": "text_escape_fragment",
     "named": true
+  },
+  {
+    "type": "then",
+    "named": false
+  },
+  {
+    "type": "unless",
+    "named": false
+  },
+  {
+    "type": "until",
+    "named": false
+  },
+  {
+    "type": "while",
+    "named": false
+  },
+  {
+    "type": "yield",
+    "named": false
   },
   {
     "type": "{",
