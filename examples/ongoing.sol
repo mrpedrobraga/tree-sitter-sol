@@ -1,3 +1,7 @@
+---
+@author mrpedrobraga
+---
+
 # Simple Hello World Program
 
 ((Claire expr:smiling))
@@ -10,4 +14,7 @@
 item_give (to: claire, what: pepperoni_pizza, amount: 10)
 wait (30 seconds)
 
-wait
+#todo conditionals, loops, functions, bindings, imports
+#todo algebraic types, optionals, fallibles,
+#todo model definition, model implementation, model registry
+#todo asset server, compilation to rust,

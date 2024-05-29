@@ -38,6 +38,10 @@
             "named": true
           },
           {
+            "type": "header",
+            "named": true
+          },
+          {
             "type": "inline_comment",
             "named": true
           },
@@ -93,19 +97,11 @@
     "named": true,
     "fields": {
       "content": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
-            "type": "text_escape_fragment",
-            "named": true
-          },
-          {
-            "type": "text_expr_fragment",
-            "named": true
-          },
-          {
-            "type": "text_raw_fragment",
+            "type": "dialog_content",
             "named": true
           }
         ]
@@ -115,20 +111,40 @@
         "required": true,
         "types": [
           {
-            "type": "*",
-            "named": false
-          },
-          {
-            "type": "-",
-            "named": false
-          },
-          {
-            "type": ">",
-            "named": false
+            "type": "dialog_prefix",
+            "named": true
           }
         ]
       }
     }
+  },
+  {
+    "type": "dialog_content",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "text_escape_fragment",
+          "named": true
+        },
+        {
+          "type": "text_expr_fragment",
+          "named": true
+        },
+        {
+          "type": "text_raw_fragment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "dialog_prefix",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "doc_comment",
@@ -181,6 +197,10 @@
           },
           {
             "type": "grouping",
+            "named": true
+          },
+          {
+            "type": "header",
             "named": true
           },
           {
@@ -245,6 +265,137 @@
         },
         {
           "type": "grouping",
+          "named": true
+        },
+        {
+          "type": "header",
+          "named": true
+        },
+        {
+          "type": "inline_comment",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "speaker_marker",
+          "named": true
+        },
+        {
+          "type": "string_double",
+          "named": true
+        },
+        {
+          "type": "string_single",
+          "named": true
+        },
+        {
+          "type": "symbol_ref",
+          "named": true
+        },
+        {
+          "type": "todo_comment",
+          "named": true
+        },
+        {
+          "type": "unit_call",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "header",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "header_entry",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "header_entry",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "header_tag_content",
+            "named": true
+          }
+        ]
+      },
+      "tag": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "header_tag_content",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "header_tag_expr_fragment",
+          "named": true
+        },
+        {
+          "type": "header_tag_raw_fragment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "header_tag_expr_fragment",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "dialog",
+          "named": true
+        },
+        {
+          "type": "doc_comment",
+          "named": true
+        },
+        {
+          "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "grouping",
+          "named": true
+        },
+        {
+          "type": "header",
           "named": true
         },
         {
@@ -323,6 +474,10 @@
         },
         {
           "type": "grouping",
+          "named": true
+        },
+        {
+          "type": "header",
           "named": true
         },
         {
@@ -416,11 +571,6 @@
     }
   },
   {
-    "type": "text_escape_fragment",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "text_expr_fragment",
     "named": true,
     "fields": {},
@@ -446,6 +596,10 @@
         },
         {
           "type": "grouping",
+          "named": true
+        },
+        {
+          "type": "header",
           "named": true
         },
         {
@@ -482,6 +636,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "text_raw_fragment",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "todo_comment",
@@ -582,6 +741,10 @@
     "named": false
   },
   {
+    "type": "---",
+    "named": false
+  },
+  {
     "type": ":",
     "named": false
   },
@@ -594,7 +757,7 @@
     "named": false
   },
   {
-    "type": "\\",
+    "type": "@",
     "named": false
   },
   {
@@ -606,6 +769,10 @@
     "named": true
   },
   {
+    "type": "header_tag_raw_fragment",
+    "named": true
+  },
+  {
     "type": "identifier",
     "named": true
   },
@@ -614,7 +781,7 @@
     "named": true
   },
   {
-    "type": "text_raw_fragment",
+    "type": "text_escape_fragment",
     "named": true
   },
   {

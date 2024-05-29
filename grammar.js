@@ -1,3 +1,5 @@
+const SPACING = /[ \r\f\t]*/;
+
 module.exports = grammar({
   name: "sol",
   extras: ($) => [/\s/],
@@ -23,6 +25,7 @@ module.exports = grammar({
 
     _expression: ($) =>
       choice(
+        $.header,
         $.grouping,
         $._literal,
         $._dialog_expr,
@@ -32,21 +35,44 @@ module.exports = grammar({
         $.function_call,
       ),
 
+    header: ($) =>
+      seq(
+        "---",
+        optional(
+          seq(
+            $.header_entry,
+            repeat(seq($._semicolon, $.header_entry)),
+            optional($._semicolon),
+          ),
+        ),
+        "---",
+      ),
+    header_entry: ($) =>
+      seq(
+        "@",
+        field("tag", $.identifier),
+        field("content", $.header_tag_content),
+      ),
+    header_tag_content: ($) =>
+      repeat1(seq($._header_tag_fragment, token.immediate(SPACING))),
+    _header_tag_fragment: ($) =>
+      choice($.header_tag_raw_fragment, $.header_tag_expr_fragment),
+    header_tag_raw_fragment: ($) => /[^\n\{\}]+/,
+    header_tag_expr_fragment: ($) =>
+      seq("{", $._expression_list_semicolon, "}"),
+
     grouping: ($) => seq("(", $._expression_list_semicolon, ")"),
 
     _dialog_expr: ($) => choice($.dialog, $.speaker_marker),
-    dialog: ($) => seq($._dialog_prefix, field("content", $._dialog_content)),
-    _dialog_prefix: ($) => field("prefix", choice("-", "*", ">")),
-    _dialog_content: ($) =>
-      repeat1(
-        choice(
-          $.text_raw_fragment,
-          $.text_escape_fragment,
-          $.text_expr_fragment,
-        ),
-      ),
-    text_raw_fragment: ($) => /[^\\;\n\{\}]+/,
-    text_escape_fragment: ($) => seq(token.immediate("\\"), /./),
+    dialog: ($) =>
+      seq(field("prefix", $.dialog_prefix), field("content", $.dialog_content)),
+    dialog_prefix: ($) => choice("-", "*", ">"),
+    dialog_content: ($) =>
+      repeat1(seq($._text_fragment, token.immediate(SPACING))),
+    _text_fragment: ($) =>
+      choice($.text_raw_fragment, $.text_escape_fragment, $.text_expr_fragment),
+    text_raw_fragment: ($) => choice(/[^\\;\n\{]+/),
+    text_escape_fragment: ($) => /\\./,
     text_expr_fragment: ($) => seq("{", $._expression_list_semicolon, "}"),
 
     speaker_marker: ($) =>
