@@ -249,7 +249,7 @@
             "type": "IMMEDIATE_TOKEN",
             "content": {
               "type": "PATTERN",
-              "value": "[ \\r\\f\\t]*"
+              "value": "[ \\r\\f\\t]+"
             }
           }
         ]
@@ -360,20 +360,8 @@
     "dialog_content": {
       "type": "REPEAT1",
       "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_text_fragment"
-          },
-          {
-            "type": "IMMEDIATE_TOKEN",
-            "content": {
-              "type": "PATTERN",
-              "value": "[ \\r\\f\\t]*"
-            }
-          }
-        ]
+        "type": "SYMBOL",
+        "name": "_text_fragment"
       }
     },
     "_text_fragment": {
@@ -396,6 +384,13 @@
     "text_raw_fragment": {
       "type": "CHOICE",
       "members": [
+        {
+          "type": "IMMEDIATE_TOKEN",
+          "content": {
+            "type": "PATTERN",
+            "value": "[ \\r\\f\\t]+"
+          }
+        },
         {
           "type": "PATTERN",
           "value": "[^\\\\;\\n\\{]+"

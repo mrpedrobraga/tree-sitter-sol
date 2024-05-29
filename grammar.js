@@ -1,4 +1,4 @@
-const SPACING = /[ \r\f\t]*/;
+const SPACING = /[ \r\f\t]+/;
 
 module.exports = grammar({
   name: "sol",
@@ -67,11 +67,10 @@ module.exports = grammar({
     dialog: ($) =>
       seq(field("prefix", $.dialog_prefix), field("content", $.dialog_content)),
     dialog_prefix: ($) => choice("-", "*", ">"),
-    dialog_content: ($) =>
-      repeat1(seq($._text_fragment, token.immediate(SPACING))),
+    dialog_content: ($) => repeat1($._text_fragment),
     _text_fragment: ($) =>
       choice($.text_raw_fragment, $.text_escape_fragment, $.text_expr_fragment),
-    text_raw_fragment: ($) => choice(/[^\\;\n\{]+/),
+    text_raw_fragment: ($) => choice(token.immediate(SPACING), /[^\\;\n\{]+/),
     text_escape_fragment: ($) => /\\./,
     text_expr_fragment: ($) => seq("{", $._expression_list_semicolon, "}"),
 
