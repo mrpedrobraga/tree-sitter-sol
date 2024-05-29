@@ -21,7 +21,7 @@ module.exports = grammar({
         optional($._semicolon),
       ),
 
-    _expression: ($) => choice($._literal, $.dialog),
+    _expression: ($) => choice($._literal, $.dialog, $._comment),
 
     dialog: ($) => seq($._dialog_prefix, field("content", $._dialog_content)),
     _dialog_prefix: ($) => field("prefix", choice("-", "*", ">")),
@@ -33,9 +33,16 @@ module.exports = grammar({
           $.text_expr_fragment,
         ),
       ),
-    text_raw_fragment: ($) => /[^\\;\r\f\n\{\}]+/,
+    text_raw_fragment: ($) => /[^\\;\n\{\}]+/,
     text_escape_fragment: ($) => seq(token.immediate("\\"), /./),
     text_expr_fragment: ($) => seq("{", $._expression_list_semicolon, "}"),
+
+    _comment: ($) => choice($.inline_comment, $.doc_comment, $.todo_comment),
+    doc_comment: ($) => prec.right(2, seq("##", $.comment_raw_fragment)),
+    todo_comment: ($) =>
+      prec.right(1, seq("#todo", field("what", $.comment_raw_fragment))),
+    inline_comment: ($) => prec.right(1, seq("#", $.comment_raw_fragment)),
+    comment_raw_fragment: ($) => /[^\n]+/,
 
     _literal: ($) => choice($._number_literal, $._string_literal),
 
