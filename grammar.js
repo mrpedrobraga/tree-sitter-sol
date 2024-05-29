@@ -113,7 +113,11 @@ module.exports = grammar({
       ),
 
     unit_call: ($) =>
-      seq(field("scalar", $._number_literal), field("unit", $.identifier)),
+      seq(
+        field("scalar", $._number_literal),
+        optional(token.immediate(SPACING)),
+        field("unit", $.identifier),
+      ),
 
     _literal: ($) => choice($._number_literal, $._string_literal),
 
