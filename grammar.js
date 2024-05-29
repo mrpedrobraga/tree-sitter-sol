@@ -17,11 +17,19 @@ module.exports = grammar({
     _expression_list_comma: ($) =>
       seq(
         $._expression,
-        repeat(seq($._semicolon, $._expression)),
-        optional($._semicolon),
+        repeat(seq($._comma, $._expression)),
+        optional($._comma),
       ),
 
-    _expression: ($) => choice($._literal, $.dialog, $._comment),
+    _expression: ($) =>
+      choice(
+        $._literal,
+        $.dialog,
+        $._comment,
+        $.symbol_ref,
+        $.unit_call,
+        $.function_call,
+      ),
 
     dialog: ($) => seq($._dialog_prefix, field("content", $._dialog_content)),
     _dialog_prefix: ($) => field("prefix", choice("-", "*", ">")),
@@ -43,6 +51,31 @@ module.exports = grammar({
       prec.right(1, seq("#todo", field("what", $.comment_raw_fragment))),
     inline_comment: ($) => prec.right(1, seq("#", $.comment_raw_fragment)),
     comment_raw_fragment: ($) => /[^\n]+/,
+
+    identifier: ($) => /[_a-zA-Z][_a-zA-Z0-9]*/,
+
+    symbol_ref: ($) => choice($.identifier),
+    function_call: ($) =>
+      seq(
+        field("callee", $._expression),
+        "(",
+        field("arguments", optional($.call_argument_list)),
+        ")",
+      ),
+    call_argument_list: ($) =>
+      seq(
+        $.call_argument,
+        repeat(seq($._comma, $.call_argument)),
+        optional($._comma),
+      ),
+    call_argument: ($) =>
+      seq(
+        optional(seq(field("name", $.identifier), ":")),
+        field("value", $._expression),
+      ),
+
+    unit_call: ($) =>
+      seq(field("scalar", $._number_literal), field("unit", $.identifier)),
 
     _literal: ($) => choice($._number_literal, $._string_literal),
 
