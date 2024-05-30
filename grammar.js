@@ -90,10 +90,12 @@ module.exports = grammar({
       ),
 
     _comment: ($) => choice($.inline_comment, $.doc_comment, $.todo_comment),
-    doc_comment: ($) => prec.right(2, seq("##", $.comment_raw_fragment)),
+    doc_comment: ($) =>
+      prec.right(2, seq(token.immediate("##"), $.comment_raw_fragment)),
     todo_comment: ($) =>
       prec.right(1, seq("#todo", field("what", $.comment_raw_fragment))),
-    inline_comment: ($) => prec.right(1, seq("#", $.comment_raw_fragment)),
+    inline_comment: ($) =>
+      prec.right(1, seq(token.immediate("#"), $.comment_raw_fragment)),
     comment_raw_fragment: ($) => /[^\n]+/,
 
     function_call: ($) =>
