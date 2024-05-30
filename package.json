@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-sol",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sol support for Tree Sitter.",
   "main": "index.js",
   "types": "bindings/node",
