@@ -1,5 +1,8 @@
 # Sol ☀️
 
+> [!WARNING] In development
+> Sol is current in early development and is not available for usage yet.
+
 Sol is a data/markup/scripting language for applications and assets. Being text-based, you can check `.sol` into version control, and being backend-agnostic means you can port assets across engines and implementations.
 Sol itself is highly portable -- it's written in Rust and only requires providing implementations for external symbols you define.
 
