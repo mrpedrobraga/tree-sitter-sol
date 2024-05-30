@@ -1,4 +1,7 @@
-# Sol
+# Sol ☀️
+
+> [!WARNING] In development
+> Sol is current in early development and is not available for usage yet.
 
 Sol is a data/markup/scripting language for applications and assets. Being text-based, you can check `.sol` into version control, and being backend-agnostic means you can port assets across engines and implementations.
 Sol itself is highly portable -- it's written in Rust and only requires providing implementations for external symbols you define.
@@ -10,7 +13,7 @@ Sol comes with many language features, from contract definitions to full-on prog
 ### Models
 
 You can define type safe models...
-```lua
+```sol
 model Item
   field name                : text
   field usage_count         : text
@@ -19,7 +22,7 @@ model Item
 end
 ```
 ...and them implement them on another file.
-```lua
+```sol
 impl Item
 
 name = "Hamburger"
@@ -38,7 +41,7 @@ end
 
 Notably, Sol has builtin support for dialogues, making for a __beautiful__ cutscene format, that looks like a screen play.
 
-```lua
+```sol
 use game::chapter_1::RETURNED_TO_SCHOOL
 
 scene "School Entrance"
@@ -68,7 +71,7 @@ end
 
 Sol allows defining typed [algebraic](https://en.wikipedia.org/wiki/Algebraic_data_type) facts that help you ensure your game is in a valid state.
 
-```lua
+```sol
 let chapter1 : some {
   SCHOOL_BEGGINING,
   DUNGEON_1 : some {
