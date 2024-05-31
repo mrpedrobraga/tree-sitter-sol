@@ -125,7 +125,9 @@ module.exports = grammar({
 
     _block: ($) =>
       choice(
-        $.scene,
+        $.using,
+        $._lexical_blocks,
+        $.field,
         $.if,
         $.unless,
         $.loop,
@@ -140,14 +142,39 @@ module.exports = grammar({
         $.await,
       ),
     _rich_identifier: ($) => choice($.identifier, $._string_literal),
-    scene: ($) =>
+
+    using: ($) => prec.left(seq("using", field("what", $.symbol_ref))),
+    _lexical_blocks: ($) => choice($.child_def, $.fn_decl, $.model, $.impl),
+    block_content: ($) => $._expression_list_semicolon,
+    child_def: ($) =>
       seq(
-        choice("scene", "fn", "action"),
+        choice("def"),
         field("name", $._rich_identifier),
-        field("content", optional($.scene_content)),
+        field("content", optional($.block_content)),
         "end",
       ),
-    scene_content: ($) => $._expression_list_semicolon,
+    fn_decl: ($) =>
+      seq(
+        choice("fn", "action"),
+        field("name", $._rich_identifier),
+        field("content", optional($.block_content)),
+        "end",
+      ),
+    model: ($) =>
+      seq(
+        "model",
+        field("name", $._rich_identifier),
+        field("content", $.block_content),
+        "end",
+      ),
+    impl: ($) =>
+      seq(
+        "impl",
+        field("what", $._rich_identifier),
+        field("content", $.block_content),
+        "end",
+      ),
+    field: ($) => seq("field", field("name", $.identifier, ":", $._expression)),
 
     if: ($) =>
       seq(
