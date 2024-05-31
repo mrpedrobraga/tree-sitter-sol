@@ -3956,18 +3956,6 @@
     "named": false
   },
   {
-    "type": "#",
-    "named": false
-  },
-  {
-    "type": "##",
-    "named": false
-  },
-  {
-    "type": "#todo",
-    "named": false
-  },
-  {
     "type": "&",
     "named": false
   },
@@ -3996,7 +3984,15 @@
     "named": false
   },
   {
+    "type": "--",
+    "named": false
+  },
+  {
     "type": "---",
+    "named": false
+  },
+  {
+    "type": "--todo",
     "named": false
   },
   {

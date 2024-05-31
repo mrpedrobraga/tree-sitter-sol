@@ -501,7 +501,7 @@
             "type": "IMMEDIATE_TOKEN",
             "content": {
               "type": "STRING",
-              "value": "##"
+              "value": "---"
             }
           },
           {
@@ -519,7 +519,7 @@
         "members": [
           {
             "type": "STRING",
-            "value": "#todo"
+            "value": "--todo"
           },
           {
             "type": "FIELD",
@@ -542,7 +542,7 @@
             "type": "IMMEDIATE_TOKEN",
             "content": {
               "type": "STRING",
-              "value": "#"
+              "value": "--"
             }
           },
           {
