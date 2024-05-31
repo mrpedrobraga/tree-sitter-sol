@@ -328,24 +328,37 @@
             "type": "CHOICE",
             "members": [
               {
-                "type": "IMMEDIATE_TOKEN",
-                "content": {
-                  "type": "PATTERN",
-                  "value": "[ \\r\\f\\t]+"
-                }
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "IMMEDIATE_TOKEN",
+                        "content": {
+                          "type": "PATTERN",
+                          "value": "[ \\r\\f\\t]+"
+                        }
+                      },
+                      {
+                        "type": "BLANK"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "FIELD",
+                    "name": "content",
+                    "content": {
+                      "type": "SYMBOL",
+                      "name": "dialog_content"
+                    }
+                  }
+                ]
               },
               {
                 "type": "BLANK"
               }
             ]
-          },
-          {
-            "type": "FIELD",
-            "name": "content",
-            "content": {
-              "type": "SYMBOL",
-              "name": "dialog_content"
-            }
           }
         ]
       }
@@ -505,8 +518,16 @@
             }
           },
           {
-            "type": "SYMBOL",
-            "name": "comment_raw_fragment"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "comment_raw_fragment"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
           }
         ]
       }
@@ -525,8 +546,16 @@
             "type": "FIELD",
             "name": "what",
             "content": {
-              "type": "SYMBOL",
-              "name": "comment_raw_fragment"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "comment_raw_fragment"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
             }
           }
         ]
@@ -546,8 +575,16 @@
             }
           },
           {
-            "type": "SYMBOL",
-            "name": "comment_raw_fragment"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "comment_raw_fragment"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
           }
         ]
       }

@@ -1,9 +1,4 @@
----
-@meta Dreamed Away Chapter Four;
-@et   Pedro Braga;
----
-
-scene "Dungeon 04 Entrance"
+def "Dungeon 04 Entrance"
   [Theo shocked]
   - This... place...
   - Doesn't look like a dungeon, no...
@@ -16,7 +11,7 @@ scene "Dungeon 04 Entrance"
   - I... guess?
 end
 
-scene "Jellyfish Rodeo Comment"
+def "Jellyfish Rodeo Comment"
   [Researcher05]
   - I remember _my_ first jellyfish rodeo.
 end

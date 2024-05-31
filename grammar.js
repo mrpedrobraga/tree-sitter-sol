@@ -69,8 +69,12 @@ module.exports = grammar({
         1,
         seq(
           field("prefix", $.dialog_prefix),
-          optional(token.immediate(SPACING)),
-          field("content", $.dialog_content),
+          optional(
+            seq(
+              optional(token.immediate(SPACING)),
+              field("content", $.dialog_content),
+            ),
+          ),
         ),
       ),
     dialog_prefix: ($) => choice("-", "*", ">"),
@@ -91,11 +95,20 @@ module.exports = grammar({
 
     _comment: ($) => choice($.inline_comment, $.doc_comment, $.todo_comment),
     doc_comment: ($) =>
-      prec.right(2, seq(token.immediate("---"), $.comment_raw_fragment)),
+      prec.right(
+        2,
+        seq(token.immediate("---"), optional($.comment_raw_fragment)),
+      ),
     todo_comment: ($) =>
-      prec.right(1, seq("--todo", field("what", $.comment_raw_fragment))),
+      prec.right(
+        1,
+        seq("--todo", field("what", optional($.comment_raw_fragment))),
+      ),
     inline_comment: ($) =>
-      prec.right(1, seq(token.immediate("--"), $.comment_raw_fragment)),
+      prec.right(
+        1,
+        seq(token.immediate("--"), optional($.comment_raw_fragment)),
+      ),
     comment_raw_fragment: ($) => /[^\n]+/,
 
     function_call: ($) =>

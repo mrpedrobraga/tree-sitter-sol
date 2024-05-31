@@ -770,7 +770,7 @@
     "fields": {
       "content": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "dialog_content",
@@ -824,7 +824,7 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "comment_raw_fragment",
@@ -1972,7 +1972,7 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "comment_raw_fragment",
@@ -2783,7 +2783,7 @@
     "fields": {
       "what": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "comment_raw_fragment",
