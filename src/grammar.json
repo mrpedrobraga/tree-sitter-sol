@@ -912,6 +912,10 @@
             {
               "type": "STRING",
               "value": "action"
+            },
+            {
+              "type": "STRING",
+              "value": "scene"
             }
           ]
         },

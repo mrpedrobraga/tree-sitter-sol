@@ -4116,6 +4116,10 @@
     "named": false
   },
   {
+    "type": "scene",
+    "named": false
+  },
+  {
     "type": "text_escape_fragment",
     "named": true
   },

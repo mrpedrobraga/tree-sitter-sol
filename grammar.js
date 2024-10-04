@@ -168,7 +168,7 @@ module.exports = grammar({
       ),
     fn_decl: ($) =>
       seq(
-        choice("fn", "action"),
+        choice("fn", "action", "scene"),
         field("name", $._rich_identifier),
         field("content", optional($.block_content)),
         "end",
